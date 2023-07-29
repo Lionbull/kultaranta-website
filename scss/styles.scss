@@ -3,8 +3,13 @@ First run "npm run sass" to compile the scss to css.
 Changes from this file will be then applied
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Monoton&display=swap');
+
 $primary-color: rgb(77, 160, 79);
-$secondary-color: rgb(144, 199, 145);
+$primary-color-trans: rgba(77, 160, 78, 0.601);
+$secondary-color: #95D5B2;
+$secondary-color-trans: #95d5b28d;
+$button-color: rgba(34, 62, 35, 0.718);
 
 body {
   margin: 0;
@@ -12,34 +17,78 @@ body {
 }
 
 .title-content-wrapper{
-    background-color: $primary-color;
+    //background-color: $primary-color;
+    //background-image: linear-gradient(to bottom, transparent, $primary-color 10% 90%, transparent), url("/src/header-pattern.png");
+    //background-image: linear-gradient(to bottom, $primary-color, transparent 20% 80%, $primary-color), url("/src/saimaan-kultaranta-beach.jpg");
+    background: linear-gradient(to top, $primary-color-trans, $secondary-color-trans), url("/src/saimaan-kultaranta-cottages.jpg") no-repeat bottom center;
+    background-size:cover;
+    background-repeat: repeat;
     display: flex;
     justify-content: center;
-    width: auto;
     height: 100vh;
     margin: 0;
 
     .title-container {
-        
-        background-color: blue;
-        margin: 50px;
-        width: 50%;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 200px;
+        //background-color: blue;
+        margin: 5%;
+        width: 60%;
+        justify-content: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+            //background-color: red;
+            justify-content: center;
+            text-align: center;
+            
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
 
         .title {
+            font-family: 'Luxurious Roman', cursive;
+            font-family: 'Monoton', cursive;
             color: white;
-            background-color: red;
-            font-size: 50px;
-            font-weight: bold;
+            //background-color: rgb(86, 0, 0);
+            font-size: 70px;
             text-align: center;
+            white-space: pre-wrap;
+            text-shadow: 1px 1px 2px rgb(0, 0, 0);
+        }
+
+        .button-book-now {
+            background-color: $button-color;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            width: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            transition: ease-in-out 0.2s;
+
+            &:hover {
+                background-color: $primary-color;
+            }
         }
     }
 }
 
 .main-content-wrapper {
     background-color: $secondary-color;
+    //background-image: linear-gradient(to bottom, transparent, #95D5B2, transparent), url("/src/background-pattern.png");
+    background-image: url("/src/background-pattern-new.png");
+    background-size: 100%;
+    background-repeat: repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,13 +96,101 @@ body {
     width: auto;
     margin: 0;
 
-    .content-item {
-        background-color: blue;
-        margin: 50px;
-        width: 50%;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 200px;
+    .text-content-item {
+        background-color: $primary-color;
+        margin-top: 50px;
+        width: 60%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 30px 30px 30px;
+
+        p {
+            font-family: 'Luxurious Roman', cursive;
+            font-family: 'Monoton', cursive;
+            font-size: 45px;
+            color: white;
+            margin: 0px 0px 20px 0px;
+            padding: 0;
+        }
+
+        .inner-content {
+            width: 60%;
+            text-align: left;
+            margin-top: 20px;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            line-height: 1.5;
+        }
     }
 
+    .content-item {
+        background-color: blue;
+        padding: 10px 30px 30px 30px;
+        margin: 50px;
+        width: 60%;
+        text-align: left;
+        vertical-align: middle;
+        display: flex;
+
+        .inner-content {
+            background-color: red;
+            
+            width: 40%;
+
+            .p-title{
+                font-family: 'Luxurious Roman', cursive;
+                font-family: 'Monoton', cursive;
+                font-size: 40px;
+                line-height: 1.5;
+            }
+            .p-body{
+                font-size: 20px;
+                line-height: 1.5;
+
+            }
+        }
+
+        .content-picture {
+            background-color: yellow;
+            margin: 50px;
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+
+}
+
+.footer {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    
+    .icons {
+        text-align: center;
+
+        a i {
+            color: black;
+            font-size: 35px;
+            margin: 10px;
+
+            transition: ease-in-out 0.2s;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+
+        .booking {
+            height: 25px;
+            color:black
+        }
+    }
+
+    p{
+        text-align: center;
+    }
 }

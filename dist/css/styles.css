@@ -2,43 +2,135 @@
 First run "npm run sass" to compile the scss to css.
 Changes from this file will be then applied
 */
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Monoton&display=swap");
 body {
   margin: 0;
   padding: 0; }
 
 .title-content-wrapper {
-  background-color: #4da04f;
+  background: linear-gradient(to top, rgba(77, 160, 78, 0.601), #95d5b28d), url("/src/saimaan-kultaranta-cottages.jpg") no-repeat bottom center;
+  background-size: cover;
+  background-repeat: repeat;
   display: flex;
   justify-content: center;
-  width: auto;
   height: 100vh;
   margin: 0; }
   .title-content-wrapper .title-container {
-    background-color: blue;
-    margin: 50px;
-    width: 50%;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 200px; }
-    .title-content-wrapper .title-container .title {
-      color: white;
-      background-color: red;
-      font-size: 50px;
-      font-weight: bold;
+    margin: 5%;
+    width: 60%;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .title-content-wrapper .title-container .logo {
+      justify-content: center;
       text-align: center; }
+      .title-content-wrapper .title-container .logo img {
+        width: 200px;
+        height: 200px; }
+    .title-content-wrapper .title-container .title {
+      font-family: 'Luxurious Roman', cursive;
+      font-family: 'Monoton', cursive;
+      color: white;
+      font-size: 70px;
+      text-align: center;
+      white-space: pre-wrap;
+      text-shadow: 1px 1px 2px black; }
+    .title-content-wrapper .title-container .button-book-now {
+      background-color: rgba(34, 62, 35, 0.718);
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      width: 200px;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+      transition: ease-in-out 0.2s; }
+      .title-content-wrapper .title-container .button-book-now:hover {
+        background-color: #4da04f; }
 
 .main-content-wrapper {
-  background-color: #90c791;
+  background-color: #95D5B2;
+  background-image: url("/src/background-pattern-new.png");
+  background-size: 100%;
+  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto;
   margin: 0; }
+  .main-content-wrapper .text-content-item {
+    background-color: #4da04f;
+    margin-top: 50px;
+    width: 60%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 30px 30px; }
+    .main-content-wrapper .text-content-item p {
+      font-family: 'Luxurious Roman', cursive;
+      font-family: 'Monoton', cursive;
+      font-size: 45px;
+      color: white;
+      margin: 0px 0px 20px 0px;
+      padding: 0; }
+    .main-content-wrapper .text-content-item .inner-content {
+      width: 60%;
+      text-align: left;
+      margin-top: 20px;
+      font-size: 20px;
+      color: white;
+      line-height: 1.5; }
   .main-content-wrapper .content-item {
     background-color: blue;
+    padding: 10px 30px 30px 30px;
     margin: 50px;
-    width: 50%;
-    text-align: center;
+    width: 60%;
+    text-align: left;
     vertical-align: middle;
-    line-height: 200px; }
+    display: flex; }
+    .main-content-wrapper .content-item .inner-content {
+      background-color: red;
+      width: 40%; }
+      .main-content-wrapper .content-item .inner-content .p-title {
+        font-family: 'Luxurious Roman', cursive;
+        font-family: 'Monoton', cursive;
+        font-size: 40px;
+        line-height: 1.5; }
+      .main-content-wrapper .content-item .inner-content .p-body {
+        font-size: 20px;
+        line-height: 1.5; }
+    .main-content-wrapper .content-item .content-picture {
+      background-color: yellow;
+      margin: 50px;
+      width: 40%;
+      text-align: center;
+      vertical-align: middle; }
+
+.footer {
+  background-color: #4da04f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0; }
+  .footer .icons {
+    text-align: center; }
+    .footer .icons a i {
+      color: black;
+      font-size: 35px;
+      margin: 10px;
+      transition: ease-in-out 0.2s; }
+      .footer .icons a i:hover {
+        color: #95D5B2; }
+    .footer .icons .booking {
+      height: 25px;
+      color: black; }
+  .footer p {
+    text-align: center; }
