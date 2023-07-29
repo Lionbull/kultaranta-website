@@ -32,28 +32,29 @@ body {
       font-family: 'Luxurious Roman', cursive;
       font-family: 'Monoton', cursive;
       color: white;
-      font-size: 70px;
+      font-size: 85px;
       text-align: center;
       white-space: pre-wrap;
       text-shadow: 1px 1px 2px black; }
-    .title-content-wrapper .title-container .button-book-now {
-      background-color: rgba(34, 62, 35, 0.718);
-      color: white;
-      border: 1px solid white;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 20px;
-      width: 200px;
-      margin: 0 auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-      cursor: pointer;
-      transition: ease-in-out 0.2s; }
-      .title-content-wrapper .title-container .button-book-now:hover {
-        background-color: #4da04f; }
+
+.button-book-now {
+  background-color: rgba(34, 62, 35, 0.718);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  transition: ease-in-out 0.2s; }
+  .button-book-now:hover {
+    background-color: #4da04f; }
 
 .main-content-wrapper {
   background-color: #95D5B2;
@@ -89,30 +90,63 @@ body {
       color: white;
       line-height: 1.5; }
   .main-content-wrapper .content-item {
-    background-color: blue;
     padding: 10px 30px 30px 30px;
     margin: 50px;
     width: 60%;
     text-align: left;
     vertical-align: middle;
-    display: flex; }
-    .main-content-wrapper .content-item .inner-content {
-      background-color: red;
-      width: 40%; }
-      .main-content-wrapper .content-item .inner-content .p-title {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4da04f; }
+    .main-content-wrapper .content-item .text-content {
+      width: 51%; }
+      .main-content-wrapper .content-item .text-content .p-title {
         font-family: 'Luxurious Roman', cursive;
         font-family: 'Monoton', cursive;
-        font-size: 40px;
-        line-height: 1.5; }
-      .main-content-wrapper .content-item .inner-content .p-body {
+        font-size: 42px;
+        line-height: 1.5;
+        color: white; }
+      .main-content-wrapper .content-item .text-content .p-body {
         font-size: 20px;
-        line-height: 1.5; }
+        line-height: 1.5;
+        color: white; }
     .main-content-wrapper .content-item .content-picture {
-      background-color: yellow;
-      margin: 50px;
       width: 40%;
-      text-align: center;
-      vertical-align: middle; }
+      height: 500px;
+      overflow: hidden;
+      padding: 0; }
+      .main-content-wrapper .content-item .content-picture .paragraph-picture-vertical {
+        object-fit: cover;
+        object-position: 0 65%;
+        width: 100%;
+        height: 100%;
+        border-radius: 3%; }
+      .main-content-wrapper .content-item .content-picture .paragraph-picture-horizontal {
+        object-fit: cover;
+        object-position: 85% 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 3%; }
+
+.interactive-item {
+  background-color: #4da04f;
+  text-align: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0px 50px 0px; }
+  .interactive-item .text-content {
+    width: 60%; }
+    .interactive-item .text-content .p-title {
+      font-family: 'Luxurious Roman', cursive;
+      font-family: 'Monoton', cursive;
+      font-size: 42px;
+      line-height: 1.5;
+      color: white; }
+  .interactive-item .button-container {
+    width: 300px;
+    height: 35px; }
 
 .footer {
   background-color: #4da04f;
