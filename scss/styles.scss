@@ -152,12 +152,21 @@ body {
     width: auto;
     margin: 0;
 
+    .divider-background {
+        background-color: $primary-color;
+        height: 100px;
+        width: 60%;
+        margin: 50px 0px 50px 0px;
+    }
+
     .divider {
         background-color: $secondary-color;
-        width: 30%;
+        width: 50%;
         height: 5px;
-        margin: 50px 0px 50px 0px;
         border-radius: 20px;
+        position: relative;
+        top: 50%;
+        left: 25%;
     }
 
     .cottage-title {

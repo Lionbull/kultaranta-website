@@ -108,12 +108,19 @@ body {
   align-items: center;
   width: auto;
   margin: 0; }
+  .main-content-wrapper .divider-background {
+    background-color: #4da04f;
+    height: 100px;
+    width: 60%;
+    margin: 50px 0px 50px 0px; }
   .main-content-wrapper .divider {
     background-color: #95D5B2;
-    width: 30%;
+    width: 50%;
     height: 5px;
-    margin: 50px 0px 50px 0px;
-    border-radius: 20px; }
+    border-radius: 20px;
+    position: relative;
+    top: 50%;
+    left: 25%; }
   .main-content-wrapper .cottage-title {
     font-family: 'Luxurious Roman', cursive;
     font-family: 'Monoton', cursive;
