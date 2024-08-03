@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Header from "../../components/Header.svelte";
-	import WelcomeScreen from "../../components/welcome-screen.svelte";
-	import ShortDescription from "../../components/short-description.svelte";
-	import Cottages from "../../components/cottages.svelte";
-	import PhotoGallery from "../../components/photo-gallery.svelte";
-  	import FeaturesSection from "../../components/features-section.svelte";
-	import ReviewCards from "../../components/review-cards.svelte";
+	import Header from "../../lib/components/header.svelte";
+	import WelcomeScreen from "../../lib/components/welcome-screen.svelte";
+	import ShortDescription from "../../lib/components/short-description.svelte";
+	import Cottages from "../../lib/components/cottages.svelte";
+	import PhotoGallery from "../../lib/components/photo-gallery.svelte";
+  	import FeaturesSection from "../../lib/components/features-section.svelte";
+	import ReviewCards from "../../lib/components/review-cards.svelte";
 </script>
 
 <Header />
