@@ -22,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^3.0.2",
+		"@types/googlemaps": "^3.43.3",
 		"svelte-icons": "^2.1.0"
 	}
 }

@@ -6,6 +6,8 @@
 	import PhotoGallery from "../../lib/components/photo-gallery.svelte";
   	import FeaturesSection from "../../lib/components/features-section.svelte";
 	import ReviewCards from "../../lib/components/review-cards.svelte";
+    import Contacts from "$lib/components/contacts.svelte";
+    import Footer from "$lib/components/footer.svelte";
 </script>
 
 <Header />
@@ -15,3 +17,5 @@
 <PhotoGallery />
 <FeaturesSection />
 <ReviewCards />
+<Contacts />
+<Footer />
