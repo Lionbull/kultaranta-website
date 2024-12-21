@@ -22,14 +22,15 @@
 <style lang="scss">
 .main-screen {
     height: 87.5vh;
-    width: 100vw;
+    width: 99vw;
+    overflow-x: hidden;
 }
 
 .welcome-image {
     display: flex;
     align-items: center;
     overflow-x: hidden;
-    width: 100vw;
+    width: 99vw;
     height: 100%;
     background-image: url("road-to-kultaranta.jpg");
     background-size: 100% 100%;

@@ -5,8 +5,7 @@
 
 
 <div class="content-wrapper">
-    <h1>Заголовок</h1>
-    <p>Описание - основной смысл. Используйте 1-2 предложения в 1-3 строчки, если выравнивание по центру. При большем количестве текста используйте другой тип выравнивания контента</p>
+    <h1>Features</h1>
     <div class="features-wrapper">
         <FeatureItem>
             <FaFish />
@@ -40,7 +39,6 @@
     h1 {
         font-weight: 700;
         margin: 0;
-        margin-top: 3rem;
     }
 
     p {

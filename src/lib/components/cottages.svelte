@@ -84,6 +84,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 120px;
+    margin: 0 0 100px 0;
 
     h1 {
         margin: 0 0 60px 0;
@@ -102,7 +103,6 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin: 0 0 100px 0;
         gap: 65px;
 
         .big-cottage {
