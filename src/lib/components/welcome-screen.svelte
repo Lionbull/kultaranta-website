@@ -1,9 +1,10 @@
 <script lang="ts">
     import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
+    import { base } from '$app/paths';
 
 </script>
 <div class="main-screen">
-    <div class="welcome-image">
+    <div class="welcome-image" style="background-image: url('{base}/road-to-kultaranta.jpg');">
         <div class="left-section">
             <h1 class="title">Discover Serinity<br>at Saimaan Kultaranta</h1>
             <p>Owned and operated by a local family, Saimaan Kultaranta invites you to enjoy a peaceful getaway with thoughtful amenities and warm hospitality. Discover a unique retreat where nature and comfort come together.</p>
@@ -32,7 +33,6 @@
     overflow-x: hidden;
     width: 99vw;
     height: 100%;
-    background-image: url("road-to-kultaranta.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;

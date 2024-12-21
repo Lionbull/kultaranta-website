@@ -1,14 +1,16 @@
 <script lang="ts">
+    import { base } from "$app/paths";
+
     let currentIndex = -1; // Index of the currently viewed image
     const images = [
-      '/area-photo-1.jpg',
-      '/area-photo-2.jpg',
-      '/area-photo-3.jpg',
-      '/area-photo-4.jpg',
-      '/area-photo-5.jpg',
-      '/area-photo-6.jpg',
-      '/area-photo-7.jpg',
-      '/area-photo-8.jpg'
+      `${base}/area-photo-1.jpg`,
+      `${base}/area-photo-2.jpg`,
+      `${base}/area-photo-3.jpg`,
+      `${base}/area-photo-4.jpg`,
+      `${base}/area-photo-5.jpg`,
+      `${base}/area-photo-6.jpg`,
+      `${base}/area-photo-7.jpg`,
+      `${base}/area-photo-8.jpg`,
     ];
   
     function openImage(index: number) {

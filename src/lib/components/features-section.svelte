@@ -1,5 +1,6 @@
 <script lang="ts">
     import FeatureItem from "./feature-item.svelte";
+    import { base } from "$app/paths";
 
 </script>
 
@@ -11,42 +12,42 @@
             title="Private Sauna"
             description="Each cottage is equipped with private sauna"
         >
-            <img src="/sauna-icon.png" alt="area" style="width: 65px; height: 65px;">
+            <img src="{base}/sauna-icon.png" alt="area" style="width: 65px; height: 65px;">
         </FeatureItem>
 
         <FeatureItem
             title="Fishing"
             description="Great opportunities for fishing in Saimaa lake"
         >
-            <img src="/fish-icon.png" alt="area" style="width: 70px; height: 70px;">
+            <img src="{base}/fish-icon.png" alt="area" style="width: 70px; height: 70px;">
         </FeatureItem>
 
         <FeatureItem
             title="BBQ"
             description="Private BBQ at each cottage and local BBQ spots"
         >
-        <img src="/bbq-icon.png" alt="area" style="width: 55px; height: 70px;">
+        <img src="{base}/bbq-icon.png" alt="area" style="width: 55px; height: 70px;">
         </FeatureItem>
 
         <FeatureItem
             title="Boating"
             description="Boats available free of costto enjoy the views of Saimaa or fishing"
         >
-            <img src="/boating-icon.png" alt="area" style="width: 70px; height: 55px;">
+            <img src="{base}/boating-icon.png" alt="area" style="width: 70px; height: 55px;">
         </FeatureItem>
 
         <FeatureItem
             title="Beach"
             description="Each cottage is equipped with private sauna"
         >
-            <img src="/beach-icon.png" alt="area" style="width: 70px; height: 70px;">
+            <img src="{base}/beach-icon.png" alt="area" style="width: 70px; height: 70px;">
         </FeatureItem>
 
         <FeatureItem
             title="Pet Friendly"
             description="Pets are welcome at Saimaan Kultaranta"
         >
-            <img src="/pet-icon.png" alt="area" style="width: 70px; height: 70px;">
+            <img src="{base}/pet-icon.png" alt="area" style="width: 70px; height: 70px;">
         </FeatureItem>
     </div>
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import FaUserAlt from 'svelte-icons/fa/FaUserAlt.svelte'
+    import { base } from '$app/paths';
 
 </script>
 
@@ -8,7 +9,7 @@
     <div class="cottage-container">
         <div class="big-cottage">
             <div class="image">
-                <img src="big-cottage-overview.jpg" alt="Big Cottage">
+                <img src="{base}/big-cottage-overview.jpg" alt="Big Cottage">
             </div>
             <div class="text-content right">
                 <h2>Three-Bedroom Villa</h2>
@@ -71,7 +72,7 @@
                 </div>
             </div>
             <div class="image">
-                <img class="small" src="small-cottage-overview.jpg" alt="Small Cottage">
+                <img class="small" src="{base}/small-cottage-overview.jpg" alt="Small Cottage">
             </div>
         </div>
     </div>

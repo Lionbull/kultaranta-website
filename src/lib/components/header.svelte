@@ -1,11 +1,12 @@
 <script lang="ts">
 	import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
+	import { base } from '$app/paths';
 </script>
 
 <header>
 	<div class="logo">
 		<div class="image">
-			<img src="/cirle-logo.png" alt="logo" />
+			<img src="{base}/cirle-logo.png" alt="logo" />
 		</div>
 	</div>
 

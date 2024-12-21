@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import FaWhatsapp from 'svelte-icons/fa/FaWhatsapp.svelte'
     import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte'
     import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
@@ -9,7 +10,7 @@
 <footer>
     <div class="logo">
 		<div class="image">
-			<img src="/cirle-logo.png" alt="logo" />
+			<img src="{base}/cirle-logo.png" alt="logo" />
 		</div>
 	</div>
 
