@@ -38,6 +38,11 @@
 		font-family: "Montserrat", serif;
 	}
 
+	:global(h3) {
+		font-size: 24px;
+		font-family: "Montserrat", serif;
+	}
+
 	:global(h3, h4, h5, h6) {
 		font-family: "Montserrat", serif;
 	}
@@ -45,7 +50,8 @@
 	:global(p, li, div) {
 		font-family: "Montserrat", serif;
 		font-weight: 400;
-		font-size: 16px;
+		font-size: 18px;
+		letter-spacing: 0.03rem;
 	}
 
 	:global(button) {
