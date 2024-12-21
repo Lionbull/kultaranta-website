@@ -6,11 +6,11 @@
     let interval: any;
   
     const reviews = [
-      { text: "Hyperframe is a Wireframe Kit for Figma enabling you to create the prototype of your website, blog, landing page or a web app in the shortest time. The Wireframe Kit includes 150+ ready screens in 14 categories covering almost all spheres of software development.", name: "John Doe", source: "Google" },
-      { text: "Hyperframe is a Wireframe Kit for Figma enabling you to create the prototype of your website, blog, landing page or a web app in the shortest time. The Wireframe Kit includes 150+ ready screens in 14 categories covering almost all spheres of software development.", name: "Jane Smith", source: "TripAdvisor" },
-      { text: "Hyperframe is a Wireframe Kit for Figma enabling you to create the prototype of your website, blog, landing page or a web app in the shortest time. The Wireframe Kit includes 150+ ready screens in 14 categories covering almost all spheres of software development.", name: "Alice Johnson", source: "Yelp" },
-      { text: "Hyperframe is a Wireframe Kit for Figma enabling you to create the prototype of your website, blog, landing page or a web app in the shortest time. The Wireframe Kit includes 150+ ready screens in 14 categories covering almost all spheres of software development.", name: "Alice Johnson", source: "Yelp" },
-      { text: "Hyperframe is a Wireframe Kit for Figma enabling you to create the prototype of your website, blog, landing page or a web app in the shortest time. The Wireframe Kit includes 150+ ready screens in 14 categories covering almost all spheres of software development.", name: "Alice Johnson", source: "Yelp" },
+      { text: "We loved staying at this place. Beautiful calm surroundings and the house had everything we needed. It was also very nice to use the grill spots and the rowing boats and we even rented sups. The host is also very friendly. I think this is one of my favourite places I ever stayed at.", name: "Eva, Belgium", source: "Booking.com" },
+      { text: "Great location, nice quiet place. A good beach with chairs, toys for kids and boats to use free of charge. Communication with the owner was easy and without problems. Sauna, fireplace, amazing view, privacy.", name: "Jaroslav, Czech Republic", source: "Booking.com" },
+      { text: "Peaceful location, beach close to the cabin, facilities more than adequate for 5 people, clean and tidy, it was nice to have 3 separate bedrooms. Explored the sights and environment a lot, beautiful lakes, trails etc. The staff was really helpful.", name: "Elisa, Finland", source: "Booking.com" },
+      { text: "Location was perfect and very peaceful. There was a pier to jump off from and also a little beach. There were also boats you could take to go into the lake. It’s very close to Puumala by car, where there are supermarkets and restaurants. Overall 10/10.", name: "Myrsini, Cyprus", source: "Booking.com" },
+      { text: "Anna, the host, was a very kind person and she did everything possible to make us feel welcome and help us have a comfortable stay. We had to change cottage during our stay due to lack of availability of the same cottage when we did the reservation, and she helped...", name: "Slowcoffee, Finland", source: "Booking.com" },
     ];
   
     function startCarousel() {
@@ -45,15 +45,22 @@
     });
   </script>
   
+<div class="content-section">
+  <h1>Reviews</h1>
   <div class="carousel-container">
     <button class="nav-button prev" on:click={prevSlide}>❮</button>
     <div class="carousel">
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
       {#each reviews as review, index (index)}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="card" style="
           transform: translateX({(index - currentIndex) * 100}%) scale({currentIndex === index ? 1 : 0.8});
           opacity: {index === currentIndex ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0.5 : 0};
           z-index: {(currentIndex === index) ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0 : -1};
-        ">
+          cursor: {(currentIndex === index) ? "pointer" : "default"};
+          "
+          on:click={() => index === currentIndex ? window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.html#tab-reviews`, "_blank"): null}
+          >
           <div class="quote"><FaQuoteRight /></div>
           <div class="review-text">{review.text}</div>
           <div class="reviewer-name">{review.name}</div>
@@ -63,6 +70,8 @@
     </div>
     <div class="indicators">
         {#each reviews as _, index}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
             class="indicator"
             class:selected={currentIndex === index}
@@ -72,13 +81,28 @@
       </div>
     <button class="nav-button next" on:click={nextSlide}>❯</button>
   </div>
+</div>
   
-  <style>
+  <style lang="scss">
+
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-sizing: border-box;
+      padding: 0 20px;
+      margin: 0 0 100px 0;
+
+      h1 {
+        margin: 0;
+      }
+    }
+    
     .carousel-container {
       position: relative;
       width: 100%;
-      height: 400px;
-      margin: 50px 0;
+      height: 460px;
     }
   
     .carousel {
@@ -92,7 +116,7 @@
     }
   
     .card {
-      height: 250px;
+      height: 300px;
       width: 450px;
       flex: 0 0 70%;
       max-width: 70%;
@@ -152,6 +176,9 @@
     .indicators {
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 15px;
     }
   
     .indicator {
@@ -159,7 +186,6 @@
       height: 12px;
       background: gray;
       border-radius: 50%;
-      margin: 0 5px;
       cursor: pointer;
     }
   
