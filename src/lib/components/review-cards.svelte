@@ -184,13 +184,14 @@
     .indicator {
       width: 12px;
       height: 12px;
-      background: gray;
+      background: white;
       border-radius: 50%;
+      border: 1px solid #687058;
       cursor: pointer;
     }
   
     .indicator.selected {
-      background: black;
+      background: #687058;
     }
   </style>
   
