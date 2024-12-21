@@ -52,6 +52,8 @@
     padding: 40px 48px;
 
     .title {
+        font-family: 'Montserrat', serif;
+        font-size: 48px;
         font-weight: bold;
         line-height: 1.25;
         margin: 0;
