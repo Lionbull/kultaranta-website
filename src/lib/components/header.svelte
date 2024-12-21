@@ -36,7 +36,7 @@
 		background-color: #687058;
 		height: 100px;
 		margin: 0;
-		padding: 0 100px;
+		padding: 0 120px;
 		box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 	}
 

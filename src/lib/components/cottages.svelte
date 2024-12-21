@@ -1,24 +1,38 @@
 <script lang="ts">
+    import FaUserAlt from 'svelte-icons/fa/FaUserAlt.svelte'
 
 </script>
 
 <div class="content-wrapper">
-    <h1>Заголовок - о чем блок</h1>
-    <p>Описание - основной смысл. Используйте 1-2 предложения в 1-3 строчки, если выравнивание по центру. При большем количестве текста используйте другой тип выравнивания контента</p>
-
-    <div class="small-cottage-container">
-        <div class="small-cottage">
-            <!-- <img src="images/cottage1.jpg" alt="cottage1"> -->
-            <div class="image"></div>
-            <div class="right-content">
-                <h3>Cottage Type 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                <ul>
-                    <li>1 bedroom</li>
-                    <li>1 bathroom</li>
-                    <li>1 kitchen</li>
-                    <li>asdasd</li>
-                </ul>
+    <h1>Cottages</h1>
+    <div class="cottage-container">
+        <div class="big-cottage">
+            <div class="image">
+                <img src="big-cottage-overview.jpg" alt="Big Cottage">
+            </div>
+            <div class="text-content right">
+                <h2>Three-Bedroom Villa</h2>
+                <p>Spacious and cozy, our Big Cottages feature a private sauna, a fireplace, a large terrace, and BBQ facilities, perfect for families or groups seeking ultimate comfort by the lake.</p>
+                <div class="cottage-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <FaUserAlt />
+                        </div>
+                        <p>5 (+2) Guests</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <img src="/area-icon.svg" alt="area">
+                        </div>
+                        <p>80 m²</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <img src="/sauna-icon.png" alt="area">
+                        </div>
+                        <p>Private sauna</p>
+                    </div>
+                </div>
                 <div class="button-wrapper">
                     <button class="button-read-more">
                         Read more
@@ -26,24 +40,39 @@
                 </div>
             </div>
         </div>
-        <div class="big-cottage">
-            <!-- <img src="images/cottage1.jpg" alt="cottage1"> -->
-            <div class="left-content">
-                <h3>Cottage Type 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                <ul>
-                    <li>1 bedroom</li>
-                    <li>1 bathroom</li>
-                    <li>1 kitchen</li>
-                    <li>asdasd</li>
-                </ul>
+        <div class="small-cottage">
+            <div class="text-content left">
+                <h2>Standard Villa</h2>
+                <p>Charming and intimate, our Small Cottages offer a private sauna, a fireplace, and a cozy terrace with BBQ, ideal for couples or smaller groups looking for a peaceful retreat.</p>
+                <div class="cottage-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <FaUserAlt />
+                        </div>
+                        <p>4 (+2) Guests</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <img src="/area-icon.svg" alt="area">
+                        </div>
+                        <p>60 m²</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <img src="/sauna-icon.png" alt="area">
+                        </div>
+                        <p>Private sauna</p>
+                    </div>
+                </div>
                 <div class="button-wrapper">
                     <button class="button-read-more">
                         Read more
                     </button>
                 </div>
             </div>
-            <div class="image"></div>
+            <div class="image">
+                <img class="small" src="small-cottage-overview.jpg" alt="Small Cottage">
+            </div>
         </div>
     </div>
 </div>
@@ -54,46 +83,54 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 20px 0;
+    padding: 0 120px;
 
     h1 {
-        margin-bottom: 30px;
+        margin: 0 0 60px 0;
         font-weight: 600;
     }
-    
+
     p {
         text-align: center;
         margin: 0 325px;
         line-height: 25px;
     }
 
-    .small-cottage {
+    .cottage-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 50px 0;
+        width: 100%;
+        margin: 0 0 100px 0;
+        gap: 65px;
 
-        .image {
-            width: 400px;
-            height: 400px;
-            background-color: gray;
-            margin: 0 20px;
+        .big-cottage {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
         }
 
-        .right-content {
+        .small-cottage {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .text-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: left;
-            width: 400px;
-            height: 400px;
-            padding-left: 50px;
+            box-sizing: border-box;
+            width: 50%;
+            gap: 24px;
 
-            h3 {
-                margin-bottom: 20px;
+            h2 {
                 font-weight: 500;
+                margin: 0;
             }
 
             p {
@@ -101,70 +138,73 @@
                 line-height: 25px;
                 margin: 0;
             }
-        }
-    }
 
-    .big-cottage {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0;
+            .cottage-info {
+                padding: 0;
+                margin: 0;
+
+                .info-item {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 10px;
+                    gap: 15px;
+
+                    .info-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 25px;
+                        height: 25px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .button-wrapper {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .button-read-more {
+                    background-color: #687058;
+                    color: white;
+                    height: 68px;
+                    width: 285px;
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .text-content.right {
+            padding-left: 7%;
+        }
+
+        .text-content.left {
+            padding-right: 7%;
+        }
 
         .image {
-            width: 400px;
-            height: 400px;
-            background-color: gray;
-            margin: 0 20px;
-        }
+            width: 50%;
+            height: 45vh;
 
-        .left-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: left;
-            width: 400px;
-            height: 400px;
-            padding-right: 30px;
-            padding-left: 50px;
-
-            h3 {
-                margin-bottom: 20px;
-                font-weight: 500;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 35px;
             }
 
-            p {
-                text-align: left;
-                line-height: 25px;
-                margin: 0;
+            .small {
+                object-position: 100% 100%;
             }
-        }
-    }
-
-    ul {
-        padding: 0;
-        margin: 10px 20px;
-        margin-bottom: 20px;
-
-        li {
-            margin-bottom: 10px;
-        }
-    }
-
-    .button-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 20px;
-
-        .button-read-more {
-            background-color: blue;
-            color: white;
-            height: 50px;
-            width: 200px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
         }
     }
 }

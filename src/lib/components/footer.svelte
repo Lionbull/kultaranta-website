@@ -1,15 +1,34 @@
 <script lang="ts">
     import FaWhatsapp from 'svelte-icons/fa/FaWhatsapp.svelte'
     import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte'
+    import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
 
     let currentYear = new Date().getFullYear()
 </script>
 
 <footer>
     <div class="logo">
-		<div class="image"></div>
-		<div class="text">Logo</div>
+		<div class="image">
+			<img src="/cirle-logo.png" alt="logo" />
+		</div>
 	</div>
+
+    <div class="contacts">
+        <p>+358456043575</p>
+		<p>Kultarannantie 35, 52200 Puumala</p>
+		<p>saimaan.kultaranta@yahoo.com</p>
+	</div>
+
+    <div class="button-wrapper">
+		<div class="button">
+			<p class="button-text">
+				Book now
+			</p>
+			<div class="button-icon">
+				<FaRegCalendarAlt/>
+			</div>
+		</div>
+    </div>
 
     <div class="icon-container">
         <div class="icon">
@@ -30,9 +49,9 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        background-color: #f0f0f0;
-        padding: 40px;
-        gap: 30px;
+        background-color: #687058;
+        padding: 60px;
+        gap: 40px;
     }
 
     .logo {
@@ -41,15 +60,14 @@
         justify-content: center;
 
 		.image {
-			width: 30px;
-			height: 30px;
-			background-color: blue;
+			width: 87px;
+			height: 81px;
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
-	}
-
-    .text {
-		margin-left: 20px;
-		color: blue;
 	}
 
     .icon-container {
@@ -73,7 +91,44 @@
     }
 
     .copyright {
-        color: #434343;
+        color: white;
         margin: 0;
+    }
+
+    .button-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #EEE8D6;
+			border-radius: 80px;
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+			padding: 16px 32px;
+			gap: 10px;
+
+			.button-text {
+				margin: 0;
+				
+			}
+
+			.button-icon {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        gap: 20px;
+        p {
+            margin: 0;
+        }
     }
 </style>

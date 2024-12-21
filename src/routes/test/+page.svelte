@@ -33,9 +33,15 @@
 		font-size: 64px;
 	}
 
-	:global(h2, h3, h4, h5, h6) {
+	:global(h2) {
+		font-size: 32px;
 		font-family: "Montserrat", serif;
 	}
+
+	:global(h3, h4, h5, h6) {
+		font-family: "Montserrat", serif;
+	}
+
 	:global(p, li, div) {
 		font-family: "Montserrat", serif;
 		font-weight: 400;
