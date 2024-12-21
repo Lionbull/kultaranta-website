@@ -19,3 +19,32 @@
 <ReviewCards />
 <Contacts />
 <Footer />
+
+<style lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+	:global(body) {
+		margin: 0;
+		padding: 0;
+		background-color: #EEE8D6;
+	}
+
+	:global(h1) {
+		font-family: "Oswald", serif;
+		font-size: 64px;
+	}
+
+	:global(h2, h3, h4, h5, h6) {
+		font-family: "Montserrat", serif;
+	}
+	:global(p, li, div) {
+		font-family: "Montserrat", serif;
+		font-weight: 400;
+		font-size: 16px;
+	}
+
+	:global(button) {
+		font-family: "Montserrat", serif;
+		font-weight: 400;
+		font-size: 16px;
+	}
+</style>

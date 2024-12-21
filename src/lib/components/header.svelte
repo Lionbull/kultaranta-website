@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
 </script>
 
 <header>
@@ -6,18 +7,24 @@
 		<div class="image">
 			<img src="/cirle-logo.png" alt="logo" />
 		</div>
-		<div class="text">Logo</div>
 	</div>
 
 	<div class="menu">
+		<div>Cottages</div>
 		<div>Features</div>
-		<div>Price</div>
-		<div>About us</div>
+		<div>About Us</div>
 		<div>Contacts</div>
 	</div>
 
 	<div class="button-wrapper">
-		<button class="button-book-now">Book now</button>
+		<div class="button">
+			<p class="button-text">
+				Book now
+			</p>
+			<div class="button-icon">
+				<FaRegCalendarAlt/>
+			</div>
+		</div>
 	</div>
 
 </header>
@@ -26,10 +33,11 @@
 	header {
 		display: flex;
 		justify-content: space-between;
-		background-color: gray;
-		height: 60px;
+		background-color: #687058;
+		height: 100px;
 		margin: 0;
 		padding: 0 100px;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 	}
 
 	.logo {
@@ -37,8 +45,8 @@
 		align-items: center;
 
 		.image {
-			width: 30px;
-			height: 30px;
+			width: 87px;
+			height: 81px;
 			
 			img {
 				width: 100%;
@@ -47,21 +55,17 @@
 		}
 	}
 
-	.text {
-		margin-left: 20px;
-		font-size: 25px;
-		color: blue;
-	}
-
 	.menu {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 20px;
+		gap: 72px;
 
 		div {
 			margin: 0 10px;
-			font-size: 15px;
+			font-weight: 600;
+			color: white;
+			font-size: 18px;
 		}
 	}
 
@@ -70,14 +74,25 @@
 		align-items: center;
 		justify-content: center;
 
-		.button-book-now {
-			background-color: blue;
-			color: white;
-			height: 35px;
-			width: 100px;
-			border: none;
-			border-radius: 25px;
-			cursor: pointer;
+		.button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #EEE8D6;
+			border-radius: 80px;
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+			padding: 16px 32px;
+			gap: 10px;
+
+			.button-text {
+				margin: 0;
+				
+			}
+
+			.button-icon {
+				width: 20px;
+				height: 20px;
+			}
 		}
 	}
 

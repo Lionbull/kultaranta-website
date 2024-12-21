@@ -38,14 +38,12 @@
     }
 
     h1 {
-        font-size: 3rem;
         font-weight: 700;
         margin: 0;
         margin-top: 3rem;
     }
 
     p {
-        font-size: 1rem;
         text-align: center;
         margin: 0 300px;
         line-height: 20px;

@@ -44,14 +44,12 @@
     }
 
     h2 {
-        font-size: 1.5rem;
         font-weight: 700;
         margin: 0;
         margin-bottom: 10px;
     }
 
     p {
-        font-size: 1rem;
         text-align: center;
         margin: 0 20px;
         line-height: 20px;

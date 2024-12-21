@@ -53,14 +53,12 @@ onMount(() => {
     }
 
     h2 {
-        font-size: 2rem;
         font-weight: 700;
         margin: 0;
         margin-bottom: 30px;
     }
 
     p {
-        font-size: 1.05rem;
         margin: 0;
         margin-bottom: 20px;
     }

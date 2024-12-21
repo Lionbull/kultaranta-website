@@ -49,7 +49,6 @@
 
     .text {
 		margin-left: 20px;
-		font-size: 25px;
 		color: blue;
 	}
 
@@ -74,7 +73,6 @@
     }
 
     .copyright {
-        font-size: 1rem;
         color: #434343;
         margin: 0;
     }

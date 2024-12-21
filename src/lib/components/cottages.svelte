@@ -58,13 +58,11 @@
     margin: 20px 0;
 
     h1 {
-        font-size: 50px;
         margin-bottom: 30px;
         font-weight: 600;
     }
     
     p {
-        font-size: 15px;
         text-align: center;
         margin: 0 325px;
         line-height: 25px;
@@ -94,13 +92,11 @@
             padding-left: 50px;
 
             h3 {
-                font-size: 25px;
                 margin-bottom: 20px;
                 font-weight: 500;
             }
 
             p {
-                font-size: 15px;
                 text-align: left;
                 line-height: 25px;
                 margin: 0;
@@ -133,13 +129,11 @@
             padding-left: 50px;
 
             h3 {
-                font-size: 25px;
                 margin-bottom: 20px;
                 font-weight: 500;
             }
 
             p {
-                font-size: 15px;
                 text-align: left;
                 line-height: 25px;
                 margin: 0;
@@ -150,7 +144,6 @@
     ul {
         padding: 0;
         margin: 10px 20px;
-        font-size: 15px;
         margin-bottom: 20px;
 
         li {

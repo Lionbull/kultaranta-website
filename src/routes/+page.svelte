@@ -36,20 +36,17 @@
 }
 
 h1 {
-	font-size: 2.5rem;
 	margin: 0;
 	line-height: 1.2;
 }
 
 p {
-	font-size: 1.2rem;
 	margin: 1rem 0 0;
 	line-height: 1.5;
 }
 
 .date {
 	margin-top: 1rem;
-	font-size: 1rem;
 	opacity: 0.8;
 }
 </style>
