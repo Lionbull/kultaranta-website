@@ -88,6 +88,7 @@
         margin-bottom: 15px;
         padding: 0;
         margin: 0;
+        color: white;
     }
 
     .copyright {

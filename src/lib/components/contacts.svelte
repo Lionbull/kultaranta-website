@@ -6,7 +6,7 @@ function initMap() {
     let dumbo = {lat: 61.522782, lng:28.27441};
     let mapOptions = {
         center: dumbo,
-        zoom: 12,
+        zoom: 7,
         
     };
     let mapElement = document.getElementById("map");
@@ -39,12 +39,12 @@ onMount(() => {
         width: 99vw;
         height: 75vh;
         background-color: grey;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 
     .contact-content {
         position: absolute;
-        transform: translate(40%, 40%);
+        transform: translate(10%, 140%);
         background-color: white;
         padding: 40px 50px;
         border-radius: 10px;
