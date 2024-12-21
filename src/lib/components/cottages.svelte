@@ -23,13 +23,13 @@
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
-                            <img src="/area-icon.svg" alt="area">
+                            <img src="{base}/area-icon.svg" alt="Area">
                         </div>
                         <p>80 m²</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
-                            <img src="/sauna-icon.png" alt="area">
+                            <img src="{base}/sauna-icon.png" alt="Sauna">
                         </div>
                         <p>Private sauna</p>
                     </div>
