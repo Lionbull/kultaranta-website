@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+import { onMount } from "svelte";
 
 
 function initMap() {
@@ -37,7 +37,7 @@ onMount(() => {
 <style>
     #map {
         width: 100vw;
-        height: 70vh;
+        height: 75vh;
         background-color: grey;
         margin-bottom: 50px;
     }

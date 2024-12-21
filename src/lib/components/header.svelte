@@ -3,7 +3,9 @@
 
 <header>
 	<div class="logo">
-		<div class="image"></div>
+		<div class="image">
+			<img src="/cirle-logo.png" alt="logo" />
+		</div>
 		<div class="text">Logo</div>
 	</div>
 
@@ -37,7 +39,11 @@
 		.image {
 			width: 30px;
 			height: 30px;
-			background-color: blue;
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 
