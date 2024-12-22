@@ -30,33 +30,14 @@
     }
   </script>
   
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="image-grid">
-        <div class="image-container" on:click={() => openImage(0)}>
-          <img src="{base}/area-photo-1.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(1)}>
-          <img src="{base}/area-photo-2.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(2)}>
-          <img src="{base}/area-photo-3.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(3)}>
-          <img src="{base}/area-photo-4.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(4)}>
-          <img src="{base}/area-photo-5.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(5)}>
-          <img src="{base}/area-photo-6.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(6)}>
-          <img src="{base}/area-photo-7.jpg" alt="kultaranta area" />
-        </div>
-        <div class="image-container" on:click={() => openImage(7)}>
-          <img src="{base}/area-photo-8.jpg" alt="kultaranta area" />
-        </div>
+        {#each images as image, index}
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <div class="image-container" on:click={() => openImage(index)}>
+                <img src={image} alt="kultaranta area" loading="lazy" />
+            </div>
+        {/each}
   </div>
   
   {#if currentIndex !== -1}
