@@ -91,7 +91,6 @@
       align-items: center;
       gap: 20px;
       box-sizing: border-box;
-      padding: 0 20px;
       margin: 0 0 100px 0;
 
       h1 {
@@ -166,11 +165,11 @@
     }
   
     .nav-button.prev {
-      left: 10px;
+      left: 20px;
     }
   
     .nav-button.next {
-      right: 10px;
+      right: 20px;
     }
   
     .indicators {

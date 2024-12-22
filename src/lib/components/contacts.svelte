@@ -36,7 +36,7 @@ onMount(() => {
 
 <style>
     #map {
-        width: 99vw;
+        width: 100vw;
         height: 75vh;
         background-color: grey;
         margin-bottom: 100px;
