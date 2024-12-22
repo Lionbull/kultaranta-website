@@ -45,7 +45,7 @@
     });
   </script>
   
-<div class="content-section">
+<div class="content-section" id="reviews">
   <h1>Reviews</h1>
   <div class="carousel-container">
     <button class="nav-button prev" on:click={prevSlide}>❮</button>

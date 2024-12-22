@@ -24,7 +24,7 @@ onMount(() => {
 
 </script>
 
-<div class="contact-wrapper">
+<div class="contact-wrapper" id="contacts">
     <div class="contact-content">
         <h2>Contacts</h2>
         <p>Kultarannantie 35, 52200 Puumala</p>

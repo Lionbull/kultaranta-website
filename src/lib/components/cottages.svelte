@@ -1,10 +1,11 @@
 <script lang="ts">
     import FaUserAlt from 'svelte-icons/fa/FaUserAlt.svelte'
     import { base } from '$app/paths';
+    import { goto } from '$app/navigation';
 
 </script>
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="cottages">
     <h1>Cottages</h1>
     <div class="cottage-container">
         <div class="big-cottage">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <button class="button-read-more">
+                    <button class="button-read-more" on:click={() => goto(`${base}/cottages`)}>
                         Read more
                     </button>
                 </div>
@@ -66,7 +67,7 @@
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <button class="button-read-more">
+                    <button class="button-read-more" on:click={() => goto(`${base}/cottages`)}>
                         Read more
                     </button>
                 </div>

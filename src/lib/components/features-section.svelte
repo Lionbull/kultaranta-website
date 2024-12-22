@@ -5,7 +5,7 @@
 </script>
 
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="features">
     <h1>Features</h1>
     <div class="features-wrapper">
         <FeatureItem

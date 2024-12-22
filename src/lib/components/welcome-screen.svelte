@@ -8,7 +8,9 @@
         <div class="left-section">
             <h1 class="title">Discover Serinity<br>at Saimaan Kultaranta</h1>
             <p>Owned and operated by a local family, Saimaan Kultaranta invites you to enjoy a peaceful getaway with thoughtful amenities and warm hospitality. Discover a unique retreat where nature and comfort come together.</p>
-            <div class="button">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="button" on:click={() => window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.en-gb.html?aid=898224&label=hotel_details-hs6QC5G%401734886622&sid=b9e93e10d90fa9624ff05b9f407e3ced&checkin=2025-05-01&checkout=2025-05-02&dest_id=-1382891&dest_type=city&dist=0&do_availability_check=1&group_adults=2&group_children=0&hp_avform=1&hp_group_set=0&no_rooms=1&origin=hp&sb_price_type=total&src=hotel&type=total&#availability_target`, "_blank")}>
                 <p class="button-text">
                     Book now
                 </p>
@@ -75,6 +77,7 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
         padding: 16px 32px;
         gap: 10px;
+        cursor: pointer;
 
         .button-text {
             margin: 0;
