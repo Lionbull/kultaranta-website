@@ -4,7 +4,7 @@
 
 </script>
 <div class="main-screen">
-    <div class="welcome-image" style="background-image: url('{base}/road-to-kultaranta.jpg');">
+    <div class="welcome-image" style="background-image: url('{base}/road-to-kultaranta.webp');">
         <div class="left-section">
             <h1 class="title">Discover Serinity<br>at Saimaan Kultaranta</h1>
             <p>Owned and operated by a local family, Saimaan Kultaranta invites you to enjoy a peaceful getaway with thoughtful amenities and warm hospitality. Discover a unique retreat where nature and comfort come together.</p>

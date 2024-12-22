@@ -3,14 +3,14 @@
 
     let currentIndex = -1; // Index of the currently viewed image
     const images = [
-      `${base}/area-photo-1.jpg`,
-      `${base}/area-photo-2.jpg`,
-      `${base}/area-photo-3.jpg`,
-      `${base}/area-photo-4.jpg`,
-      `${base}/area-photo-5.jpg`,
-      `${base}/area-photo-6.jpg`,
-      `${base}/area-photo-7.jpg`,
-      `${base}/area-photo-8.jpg`,
+      `${base}/area-photo-1.webp`,
+      `${base}/area-photo-2.webp`,
+      `${base}/area-photo-3.webp`,
+      `${base}/area-photo-4.webp`,
+      `${base}/area-photo-5.webp`,
+      `${base}/area-photo-6.webp`,
+      `${base}/area-photo-7.webp`,
+      `${base}/area-photo-8.webp`,
     ];
   
     function openImage(index: number) {
