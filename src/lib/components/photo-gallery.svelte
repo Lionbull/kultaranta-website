@@ -1,17 +1,8 @@
 <script lang="ts">
-    import { base } from "$app/paths";
+    export let padding_value = "0";
+    export let images: any = [];
 
     let currentIndex = -1; // Index of the currently viewed image
-    const images = [
-      `${base}/area-photo-1.webp`,
-      `${base}/area-photo-2.webp`,
-      `${base}/area-photo-3.webp`,
-      `${base}/area-photo-4.webp`,
-      `${base}/area-photo-5.webp`,
-      `${base}/area-photo-6.webp`,
-      `${base}/area-photo-7.webp`,
-      `${base}/area-photo-8.webp`,
-    ];
   
     function openImage(index: number) {
       currentIndex = index;
@@ -30,7 +21,7 @@
     }
   </script>
   
-  <div class="image-grid">
+  <div class="image-grid" style="padding: {padding_value};">
         {#each images as image, index}
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -41,15 +32,15 @@
   </div>
   
   {#if currentIndex !== -1}
-        <div class="modal">
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <div class="overlay" on:click={closeImage} />
-            <img src={images[currentIndex]} alt="Full size" class="modal-image" />
-            <button class="close-button" on:click={closeImage}>×</button>
-            <button class="nav-button prev" on:click={prevImage}>‹</button>
-            <button class="nav-button next" on:click={nextImage}>›</button>
-        </div>
+    <div class="modal">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div class="overlay" on:click={closeImage} />
+        <img src={images[currentIndex]} alt="Full size" class="modal-image" />
+        <button class="close-button" on:click={closeImage}>×</button>
+        <button class="nav-button prev" on:click={prevImage}>‹</button>
+        <button class="nav-button next" on:click={nextImage}>›</button>
+    </div>
   {/if}
   
   <style>
@@ -58,7 +49,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       box-sizing: border-box;
-      padding: 0 120px;
+      width: 100%;
       margin: 0 0 100px 0;
     }
   

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from "$app/paths";
 	import Header from "../../lib/components/header.svelte";
 	import WelcomeScreen from "../../lib/components/welcome-screen.svelte";
 	import ShortDescription from "../../lib/components/short-description.svelte";
@@ -8,13 +9,24 @@
 	import ReviewCards from "../../lib/components/review-cards.svelte";
     import Contacts from "$lib/components/contacts.svelte";
     import Footer from "$lib/components/footer.svelte";
+
+	const imagesPhotoGallery = [
+      `${base}/area-photo-1.webp`,
+      `${base}/area-photo-2.webp`,
+      `${base}/area-photo-3.webp`,
+      `${base}/area-photo-4.webp`,
+      `${base}/area-photo-5.webp`,
+      `${base}/area-photo-6.webp`,
+      `${base}/area-photo-7.webp`,
+      `${base}/area-photo-8.webp`,
+    ];
 </script>
 
 <Header />
 <WelcomeScreen />
 <ShortDescription />
 <CottagesShort />
-<PhotoGallery />
+<PhotoGallery images={imagesPhotoGallery} padding_value={"0 120px"}/>
 <FeaturesSection />
 <ReviewCards />
 <Contacts />

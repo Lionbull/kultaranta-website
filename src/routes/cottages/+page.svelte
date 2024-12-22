@@ -5,15 +5,11 @@
 	import ReviewCards from "../../lib/components/review-cards.svelte";
     import Contacts from "$lib/components/contacts.svelte";
     import Footer from "$lib/components/footer.svelte";
-  	import CottagesShort from "../../lib/components/cottages-short.svelte";
+  	import CottagesLong from "../../lib/components/cottages-long.svelte";
 </script>
 
 <Header />
-<CottagesShort />
-<PhotoGallery />
-<FeaturesSection />
-<ReviewCards />
-<Contacts />
+<CottagesLong />
 <Footer />
 
 <style lang="scss">
