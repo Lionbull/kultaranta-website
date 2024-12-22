@@ -1,5 +1,6 @@
 <script lang="ts">
     import { base } from "$app/paths";
+    import { goto } from '$app/navigation';
     import FaWhatsapp from 'svelte-icons/fa/FaWhatsapp.svelte'
     import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte'
     import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
@@ -7,9 +8,11 @@
     let currentYear = new Date().getFullYear()
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <footer>
     <div class="logo">
-		<div class="image">
+		<div class="image" on:click={() => goto(`${base}/`)}>
 			<img src="{base}/cirle-logo.png" alt="logo" />
 		</div>
 	</div>
@@ -20,9 +23,7 @@
 		<p>saimaan.kultaranta@yahoo.com</p>
 	</div>
 
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="button-wrapper">
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="button" on:click={() => window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.en-gb.html?aid=898224&label=hotel_details-hs6QC5G%401734886622&sid=b9e93e10d90fa9624ff05b9f407e3ced&checkin=2025-05-01&checkout=2025-05-02&dest_id=-1382891&dest_type=city&dist=0&do_availability_check=1&group_adults=2&group_children=0&hp_avform=1&hp_group_set=0&no_rooms=1&origin=hp&sb_price_type=total&src=hotel&type=total&#availability_target`, "_blank")}>
 			<p class="button-text">
 				Book now
@@ -33,13 +34,10 @@
 		</div>
     </div>
 
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="icon-container">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="icon" on:click={() => window.open(`https://wa.me/358456043575`, "_blank")}>
             <FaWhatsapp />
         </div>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="icon" on:click={() => window.open(`https://www.instagram.com/saimaan_kultaranta`, "_blank")}>
             <FaInstagram />
         </div>
@@ -68,6 +66,7 @@
 		.image {
 			width: 87px;
 			height: 81px;
+            cursor: pointer;
 			
 			img {
 				width: 100%;
