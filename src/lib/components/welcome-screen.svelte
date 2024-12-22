@@ -23,7 +23,7 @@
 <style lang="scss">
 .main-screen {
     height: calc(100vh - 100px);
-    width: calc(100vw - env(safe-area-inset-right));
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     overflow-x: hidden;
-    width: calc(100vw - env(safe-area-inset-right));
+    width: 100vw;
     height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -46,7 +46,7 @@
     align-items: left;
     background-color: rgba(238, 232, 214, 0.84);
     width: 35%;
-    margin-left: 100px;
+    margin-left: 120px;
     gap: 22px;
     border-radius: 50px;
     padding: 40px 48px;

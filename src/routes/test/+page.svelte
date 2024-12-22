@@ -59,4 +59,8 @@
 		font-weight: 400;
 		font-size: 16px;
 	}
+
+	:global(body) {
+		overflow-x: hidden;
+	}
 </style>
