@@ -64,8 +64,8 @@
         justify-content: center;
 
 		.image {
-			width: 87px;
-			height: 81px;
+			width: 120px;
+			height: 112px;
             cursor: pointer;
 			
 			img {
