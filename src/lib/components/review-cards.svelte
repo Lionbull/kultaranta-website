@@ -10,7 +10,7 @@
       { text: "Great location, nice quiet place. A good beach with chairs, toys for kids and boats to use free of charge. Communication with the owner was easy and without problems. Sauna, fireplace, amazing view, privacy.", name: "Jaroslav, Czech Republic", source: "Booking.com" },
       { text: "Peaceful location, beach close to the cabin, facilities more than adequate for 5 people, clean and tidy, it was nice to have 3 separate bedrooms. Explored the sights and environment a lot, beautiful lakes, trails etc. The staff was really helpful.", name: "Elisa, Finland", source: "Booking.com" },
       { text: "Location was perfect and very peaceful. There was a pier to jump off from and also a little beach. There were also boats you could take to go into the lake. It’s very close to Puumala by car, where there are supermarkets and restaurants. Overall 10/10.", name: "Myrsini, Cyprus", source: "Booking.com" },
-      { text: "Anna, the host, was a very kind person and she did everything possible to make us feel welcome and help us have a comfortable stay. We had to change cottage during our stay due to lack of availability of the same cottage when we did the reservation, and she helped...", name: "Slowcoffee, Finland", source: "Booking.com" },
+      { text: "The host was a very kind person and she did everything possible to make us feel welcome and help us have a comfortable stay. We had to change cottage during our stay due to lack of availability of the same cottage when we did the reservation, and she helped...", name: "Slowcoffee, Finland", source: "Booking.com" },
     ];
   
     function startCarousel() {

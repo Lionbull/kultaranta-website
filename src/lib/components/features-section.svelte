@@ -31,7 +31,7 @@
 
         <FeatureItem
             title="Boating"
-            description="Boats available free of costto enjoy the views of Saimaa or fishing"
+            description="Boats available free of cost to enjoy the views of Saimaa or fishing"
         >
             <img src="{base}/boating-icon.png" alt="Boating" style="width: 70px; height: 55px;">
         </FeatureItem>
