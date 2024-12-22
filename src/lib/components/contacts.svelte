@@ -44,9 +44,9 @@ onMount(() => {
 
     .contact-content {
         position: absolute;
-        transform: translate(10%, 140%);
+        transform: translate(5%, 90%);
         background-color: white;
-        padding: 40px 50px;
+        padding: 25px 30px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         z-index: 9999;

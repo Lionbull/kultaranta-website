@@ -22,7 +22,7 @@
 
 <style lang="scss">
 .main-screen {
-    height: 89.5vh;
+    height: calc(100vh - 100px);
     width: 100vw;
     overflow-x: hidden;
 }
