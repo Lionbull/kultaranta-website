@@ -46,9 +46,9 @@
 		<button id="close-menu" class="close-btn" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>✕</button>
 		<ul>
 		  <li><a href="{base}/cottages">Cottages</a></li>
-		  <li><a href="{base}/#features" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Features</a></li>
-		  <li><a href="{base}/#reviews" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Reviews</a></li>
-		  <li><a href="{base}/#contacts" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Contacts</a></li>
+		  <li><a href="{base}/test#features" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Features</a></li>
+		  <li><a href="{base}/test#reviews" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Reviews</a></li>
+		  <li><a href="{base}/test#contacts" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Contacts</a></li>
 		</ul>
 	</nav>
 </header>
