@@ -197,7 +197,7 @@
 			transition: transform 0.3s ease;
 
 			&.hidden {
-				transform: translateY(-100%);
+				transform: translateY(-200%);
 			}
 
 			.close-btn {

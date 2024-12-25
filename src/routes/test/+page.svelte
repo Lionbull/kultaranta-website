@@ -38,6 +38,7 @@
 		margin: 0;
 		padding: 0;
 		background-color: #EEE8D6;
+		overflow-x: hidden;
 	}
 
 	:global(h1) {
@@ -72,7 +73,43 @@
 		font-size: 16px;
 	}
 
-	:global(body) {
-		overflow-x: hidden;
+	@media (max-width: 768px) {
+		:global(body) {
+			margin: 0;
+			padding: 0;
+			background-color: #EEE8D6;
+		}
+
+		:global(h1) {
+			font-family: "Oswald", serif;
+			font-size: 32px;
+		}
+
+		:global(h2) {
+			font-size: 24px;
+			font-family: "Montserrat", serif;
+		}
+
+		:global(h3) {
+			font-size: 22px;
+			font-family: "Montserrat", serif;
+		}
+
+		:global(h3, h4, h5, h6) {
+			font-family: "Montserrat", serif;
+		}
+
+		:global(p, li, div) {
+			font-family: "Montserrat", serif;
+			font-weight: 400;
+			font-size: 14px;
+			letter-spacing: 0.03rem;
+		}
+
+		:global(button) {
+			font-family: "Montserrat", serif;
+			font-weight: 400;
+			font-size: 16px;
+		}
 	}
 </style>
