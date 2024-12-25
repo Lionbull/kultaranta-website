@@ -35,7 +35,7 @@
 	<!-- Mobile menu -->
 
 	<div class="menu-button-wrapper">
-		<button id="menu-toggle" class="hamburger" on:click={() => document.getElementById('mobile-menu')?.classList.remove('hidden')}>
+		<button class="hamburger" on:click={() => document.getElementById('mobile-menu')?.classList.remove('hidden')}>
 			<div class="button-icon">
 				<IoIosMenu />
 			</div>
@@ -168,18 +168,26 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 44px;
+			width: 46px;
+			margin: 0;
+			padding: 0;
+
 			.hamburger {
+				width: 46px;
+				height: 46px;
+				margin: 0;
+				padding: 0;
 				font-size: 2rem;
 				color: white;
 				background: none;
 				border: none;
 				cursor: pointer;
-				width: 44px;
 
 				.button-icon {
-					width: 44px;
-					height: 44px;
+					width: 46px;
+					height: 46px;
+					margin: 0;
+					padding: 0;
 				}
 			}
 		}
