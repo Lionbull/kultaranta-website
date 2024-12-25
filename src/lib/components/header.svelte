@@ -212,7 +212,10 @@
 
 			.close-btn {
 				align-self: flex-end;
-				width: 44px;
+				width: 46px;
+				height: 46px;
+				padding: 0;
+				margin: 0;
 				font-size: 2.2rem;
 				color: white;
 				background: none;
