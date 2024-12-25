@@ -175,6 +175,7 @@
 				background: none;
 				border: none;
 				cursor: pointer;
+				width: 44px;
 
 				.button-icon {
 					width: 44px;
@@ -203,6 +204,7 @@
 
 			.close-btn {
 				align-self: flex-end;
+				width: 44px;
 				font-size: 2.2rem;
 				color: white;
 				background: none;
