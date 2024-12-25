@@ -117,6 +117,11 @@
 			padding: 16px 32px;
 			gap: 10px;
             cursor: pointer;
+            transition: box-shadow 0.250s;
+
+			&:hover {
+				box-shadow: 0 0 20px rgba(238, 232, 214, 0.5);
+			}
 
 			.button-text {
 				margin: 0;

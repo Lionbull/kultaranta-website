@@ -21,10 +21,10 @@
     }
   </script>
   
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="image-grid" style="padding: {padding_value};">
         {#each images as image, index}
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div class="image-container" on:click={() => openImage(index)}>
                 <img src={image} alt="kultaranta area" loading="lazy" />
             </div>
@@ -32,9 +32,12 @@
   </div>
   
   {#if currentIndex !== -1}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="modal">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div class="image-counter">
+          {currentIndex + 1} / {images.length}
+        </div>   
         <div class="overlay" on:click={closeImage} />
         <img src={images[currentIndex]} alt="Full size" class="modal-image" />
         <button class="close-button" on:click={closeImage}>×</button>
@@ -50,7 +53,7 @@
       gap: 20px;
       box-sizing: border-box;
       width: 100%;
-      margin: 0 0 100px 0;
+      margin: 0;
     }
   
     .image-container {
@@ -60,6 +63,15 @@
       overflow: hidden;
       border-radius: 8px;
       cursor: pointer;
+
+      transition: filter 250ms, transform 250ms;
+      backface-visibility: hidden; /* Prevent rendering glitches */
+      transform: translateZ(0); /* Force hardware acceleration */
+
+      &:hover {
+        filter: brightness(0.85);
+        transform: scale(1.02);
+      }
     }
   
     img {
@@ -140,5 +152,18 @@
     .nav-button.next {
       right: 15px;
     }
+
+    .image-counter {
+      position: absolute;
+      bottom: 10px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+      z-index: 1002;
+    }
+
   </style>
   

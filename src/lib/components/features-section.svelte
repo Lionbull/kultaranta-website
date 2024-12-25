@@ -60,7 +60,7 @@
         gap: 20px;
         box-sizing: border-box;
         padding: 0 120px;
-        margin: 0 0 100px 0;
+        margin: 100px 0 100px 0;
     }
 
     h1 {

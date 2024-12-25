@@ -60,8 +60,8 @@
                         </div>
                     </div>
                     <div class="button-wrapper">
-                        <button class="button-read-more" on:click={() => goto(`${base}/cottages`)}>
-                            Read more
+                        <button class="button-read-more" on:click={() => window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.en-gb.html?aid=898224&label=hotel_details-hs6QC5G%401734886622&sid=b9e93e10d90fa9624ff05b9f407e3ced&checkin=2025-05-01&checkout=2025-05-02&dest_id=-1382891&dest_type=city&dist=0&do_availability_check=1&group_adults=2&group_children=0&hp_avform=1&hp_group_set=0&no_rooms=1&origin=hp&sb_price_type=total&src=hotel&type=total&#availability_target`, "_blank")}>
+                            Book now
                         </button>
                     </div>
                 </div>
@@ -69,12 +69,17 @@
             <div class="lower-section">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             </div>
-            <PhotoGallery images={imagesCottageBig} />
+            <div class="image-section">
+                <PhotoGallery images={imagesCottageBig} />
+            </div>
         </div>
         <div class="separator" />
         <div class="small-cottage">
             <div class="upper-section">
-                <div class="text-content left">
+                <div class="image">
+                    <img class="small" src="{base}/small-cottage-overview.webp" alt="Small Cottage">
+                </div>
+                <div class="text-content right">
                     <h2>Standard Villa</h2>
                     <p>Charming and intimate, our Small Cottages offer a private sauna, a fireplace, and a cozy terrace with BBQ, ideal for couples or smaller groups looking for a peaceful retreat.</p>
                     <div class="cottage-info">
@@ -98,21 +103,17 @@
                         </div>
                     </div>
                     <div class="button-wrapper">
-                        <button class="button-read-more" on:click={() => goto(`${base}/cottages`)}>
-                            Read more
+                        <button class="button-read-more" on:click={() => window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.en-gb.html?aid=898224&label=hotel_details-hs6QC5G%401734886622&sid=b9e93e10d90fa9624ff05b9f407e3ced&checkin=2025-05-01&checkout=2025-05-02&dest_id=-1382891&dest_type=city&dist=0&do_availability_check=1&group_adults=2&group_children=0&hp_avform=1&hp_group_set=0&no_rooms=1&origin=hp&sb_price_type=total&src=hotel&type=total&#availability_target`, "_blank")}>
+                            Book now
                         </button>
                     </div>
-                </div>
-                <div class="image">
-                    <img class="small" src="{base}/small-cottage-overview.webp" alt="Small Cottage">
                 </div>
             </div>
             <div class="lower-section">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                <PhotoGallery images={imagesCottageSmall} />
             </div>
             <div class="image-section">
-                
+                <PhotoGallery images={imagesCottageSmall} />
             </div>
         </div>
     </div>
@@ -144,7 +145,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        gap: 65px;
+        gap: 80px;
 
         .separator {
             height: 2px;
@@ -234,6 +235,11 @@
                     font-size: 18px;
                     font-weight: 500;
                     cursor: pointer;
+                    transition: box-shadow 0.250s;
+
+                    &:hover {
+                        box-shadow: 0 0 30px rgba(104, 112, 88, 0.5);
+                    }
                 }
             }
         }
@@ -267,7 +273,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            margin: 60px 0 60px 0;
+            margin: 40px 0 40px 0;
 
             p {
                 text-align: left;
@@ -276,7 +282,8 @@
         }
 
         .image-section {
-            
+            width: 100%;
+            height: 100%;
         }
     }
 }

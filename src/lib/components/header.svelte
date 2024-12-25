@@ -1,5 +1,6 @@
 <script lang="ts">
 	import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
+	import IoIosMenu from 'svelte-icons/io/IoIosMenu.svelte'
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 </script>
@@ -31,6 +32,25 @@
 		</div>
 	</div>
 
+	<!-- Mobile menu -->
+
+	<div class="menu-button-wrapper">
+		<button id="menu-toggle" class="hamburger" on:click={() => document.getElementById('mobile-menu')?.classList.remove('hidden')}>
+			<div class="button-icon">
+				<IoIosMenu />
+			</div>
+		</button>
+	</div>
+
+	<nav id="mobile-menu" class="menu-mobile hidden">
+		<button id="close-menu" class="close-btn" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>✕</button>
+		<ul>
+		  <li><a href="#cottages">Cottages</a></li>
+		  <li><a href="#features">Features</a></li>
+		  <li><a href="#about">About Us</a></li>
+		  <li><a href="#contacts">Contacts</a></li>
+		</ul>
+	</nav>
 </header>
 
 <style lang="scss">
@@ -90,6 +110,11 @@
 			padding: 16px 32px;
 			gap: 10px;
 			cursor: pointer;
+			transition: box-shadow 0.250s;
+
+			&:hover {
+				box-shadow: 0 0 20px rgba(238, 232, 214, 0.5);
+			}
 
 			.button-text {
 				margin: 0;
@@ -99,6 +124,110 @@
 			.button-icon {
 				width: 20px;
 				height: 20px;
+			}
+		}
+	}
+
+	.menu-button-wrapper {
+		display: none;
+	}
+
+	.menu-mobile {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		header {
+			height: 70px;
+			padding: 0 20px;
+		}
+		.logo {
+			display: flex;
+			align-items: center;
+
+			.image {
+				width: 53px;
+				height: 50px;
+				
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		.menu {
+			display: none;
+		}
+
+		.button-wrapper {
+			display: none;
+		}
+
+		.menu-button-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.hamburger {
+				font-size: 2rem;
+				color: white;
+				background: none;
+				border: none;
+				cursor: pointer;
+
+				.button-icon {
+					width: 44px;
+					height: 44px;
+				}
+			}
+		}
+
+		.menu-mobile {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 45svh;
+			background-color: #687058;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 20px;
+			box-sizing: border-box;
+			transition: transform 0.3s ease;
+
+			&.hidden {
+				transform: translateY(-100%);
+			}
+
+			.close-btn {
+				align-self: flex-end;
+				font-size: 2.2rem;
+				color: white;
+				background: none;
+				border: none;
+				cursor: pointer;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+				width: 100%;
+				gap: 50px;
+
+				li {
+
+					a {
+						padding: 15px 10px;
+						color: white;
+						text-decoration: none;
+						font-size: 1.5rem;
+					}
+				}
+
+				li:not(:last-child) { 
+					margin-bottom: 35px;
+				}
 			}
 		}
 	}
