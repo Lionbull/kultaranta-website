@@ -168,6 +168,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 44px;
 			.hamburger {
 				font-size: 2rem;
 				color: white;
@@ -187,7 +188,7 @@
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 45svh;
+			height: 375px;
 			background-color: #687058;
 			display: flex;
 			flex-direction: column;
