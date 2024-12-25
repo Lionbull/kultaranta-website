@@ -45,10 +45,10 @@
 	<nav id="mobile-menu" class="menu-mobile hidden">
 		<button id="close-menu" class="close-btn" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>✕</button>
 		<ul>
-		  <li><a href="#cottages">Cottages</a></li>
-		  <li><a href="#features">Features</a></li>
-		  <li><a href="#about">About Us</a></li>
-		  <li><a href="#contacts">Contacts</a></li>
+		  <li><a href="{base}/cottages">Cottages</a></li>
+		  <li><a href="#features" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Features</a></li>
+		  <li><a href="#reviews" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Reviews</a></li>
+		  <li><a href="#contacts" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Contacts</a></li>
 		</ul>
 	</nav>
 </header>
