@@ -12,42 +12,42 @@
             title="Private Sauna"
             description="Each cottage is equipped with private sauna"
         >
-            <img src="{base}/sauna-icon.png" alt="Sauna" style="width: 65px; height: 65px;">
+            <img id="sauna-icon" src="{base}/sauna-icon.png" alt="Sauna">
         </FeatureItem>
 
         <FeatureItem
             title="Fishing"
             description="Great opportunities for fishing in Saimaa lake"
         >
-            <img src="{base}/fish-icon.png" alt="Fishing" style="width: 70px; height: 70px;">
+            <img id="fishing-icon" src="{base}/fish-icon.png" alt="Fishing">
         </FeatureItem>
 
         <FeatureItem
             title="BBQ"
             description="Private BBQ at each cottage and local BBQ spots"
         >
-        <img src="{base}/bbq-icon.png" alt="BBQ" style="width: 55px; height: 70px;">
+        <img id="bbq-icon" src="{base}/bbq-icon.png" alt="BBQ">
         </FeatureItem>
 
         <FeatureItem
             title="Boating"
             description="Boats available free of cost to enjoy the views of Saimaa or fishing"
         >
-            <img src="{base}/boating-icon.png" alt="Boating" style="width: 70px; height: 55px;">
+            <img id="boating-icon" src="{base}/boating-icon.png" alt="Boating">
         </FeatureItem>
 
         <FeatureItem
             title="Beach"
             description="Each cottage is equipped with private sauna"
         >
-            <img src="{base}/beach-icon.png" alt="Beach" style="width: 70px; height: 70px;">
+            <img id="beach-icon" src="{base}/beach-icon.png" alt="Beach">
         </FeatureItem>
 
         <FeatureItem
             title="Pet Friendly"
             description="Pets are welcome at Saimaan Kultaranta"
         >
-            <img src="{base}/pet-icon.png" alt="Pet Friendly" style="width: 70px; height: 70px;">
+            <img id="pet-icon" src="{base}/pet-icon.png" alt="Pet Friendly">
         </FeatureItem>
     </div>
 </div>
@@ -72,6 +72,79 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+
+    #sauna-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    #fishing-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    #bbq-icon {
+        width: 55px;
+        height: 70px;
+    }
+
+    #boating-icon {
+        width: 70px;
+        height: 55px;
+    }
+
+    #beach-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    #pet-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    @media (max-width: 768px) {
+        .content-wrapper {
+            padding: 0 20px;
+            margin: 60px 0 60px 0;
+        }
+
+        .features-wrapper {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px;
+        }
+
+        #sauna-icon {
+            width: 52px;
+            height: 46px;
+        }
+
+        #fishing-icon {
+            width: 54px;
+            height: 48px;
+        }
+
+        #bbq-icon {
+            width: 47px;
+            height: 55px;
+        }
+
+        #boating-icon {
+            width: 53px;
+            height: 36px;
+        }
+
+        #beach-icon {
+            width: 53px;
+            height: 49px;
+        }
+
+        #pet-icon {
+            width: 51px;
+            height: 49px;
+        }
     }
 
 </style>

@@ -49,8 +49,28 @@
 
     p {
         text-align: center;
-        margin: 0 20px;
+        padding: 0 20px;
+        margin: 0;
         line-height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .feature-wrapper {
+            gap: 10px;
+        }
+
+        .icon-container {
+            width: 55px;
+            height: 55px;
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+        }
     }
 
 </style>
