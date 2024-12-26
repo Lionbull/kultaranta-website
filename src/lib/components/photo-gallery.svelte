@@ -1,8 +1,25 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     export let padding_value = "0";
     export let images: any = [];
 
     let currentIndex = -1; // Index of the currently viewed image
+    let isMobile = false; // Tracks whether the view is on mobile
+    let touchStartX = 0; // Starting X position of a touch
+    let touchEndX = 0; // Ending X position of a touch
+    let animationClass = ''; // Class for swipe animation
+
+    function updateIsMobile() {
+        if (typeof window !== "undefined") {
+            isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+        }
+    }
+
+    // Set up dynamic resizing
+    onMount(() => {
+        updateIsMobile(); // Initialize on load
+        window.addEventListener("resize", updateIsMobile); // Update on resize
+    });
   
     function openImage(index: number) {
       currentIndex = index;
@@ -23,12 +40,12 @@
   
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="image-grid" style="padding: {padding_value};">
-        {#each images as image, index}
-            <div class="image-container" on:click={() => openImage(index)}>
-                <img src={image} alt="kultaranta area" loading="lazy" />
-            </div>
-        {/each}
+  <div class="image-grid">
+    {#each images.slice(0, isMobile ? 4 : images.length) as image, index}
+      <div class="image-container" on:click={() => openImage(index)}>
+          <img src={image} alt="kultaranta area" loading="lazy" />
+      </div>
+    {/each}
   </div>
   
   {#if currentIndex !== -1}
@@ -89,7 +106,7 @@
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100svh;
       background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
@@ -110,7 +127,9 @@
     .modal-image {
       max-width: 80%;
       max-height: 90%;
-      object-fit: contain; /* Ensures the full image is displayed */
+      height: auto;
+      width: auto;
+      object-fit: contain;
       border-radius: 8px;
       z-index: 1001;
     }
@@ -119,7 +138,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 2rem;
+      font-size: 3rem;
       color: white;
       background: none;
       border: none;
@@ -163,6 +182,52 @@
       padding: 5px 10px;
       border-radius: 5px;
       z-index: 1002;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+        gap: 12px;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+      }
+      .nav-button {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+        background-color: rgba(128, 128, 128, 0.142);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        width: 30px;
+        height: 60px;
+        border-radius: 10px;
+      }
+    
+      .nav-button.prev {
+        left: 3px;
+      }
+    
+      .nav-button.next {
+        right: 3px;
+      }
     }
 
   </style>
