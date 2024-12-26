@@ -38,6 +38,25 @@
       currentIndex = index;
       resetInterval();
     }
+
+    let startX: number;
+    let endX: number;
+
+    function handleTouchStart(event: TouchEvent) {
+      startX = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event: TouchEvent) {
+      endX = event.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+      if (startX - endX > 50) {
+          nextSlide(); // Swipe left
+      } else if (endX - startX > 50) {
+          prevSlide(); // Swipe right
+      }
+    }
   
     onMount(() => {
       startCarousel();
@@ -45,42 +64,47 @@
     });
   </script>
   
-<div class="content-section" id="reviews">
-  <h1>Reviews</h1>
-  <div class="carousel-container">
-    <button class="nav-button prev" on:click={prevSlide}>❮</button>
-    <div class="carousel">
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      {#each reviews as review, index (index)}
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div class="card" style="
-          transform: translateX({(index - currentIndex) * 100}%) scale({currentIndex === index ? 1 : 0.8});
-          opacity: {index === currentIndex ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0.5 : 0};
-          z-index: {(currentIndex === index) ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0 : -1};
-          cursor: {(currentIndex === index) ? "pointer" : "default"};
-          "
-          on:click={() => index === currentIndex ? window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.html#tab-reviews`, "_blank"): null}
-          >
-          <div class="quote"><FaQuoteRight /></div>
-          <div class="review-text">{review.text}</div>
-          <div class="reviewer-name">{review.name}</div>
-          <div class="review-source">{review.source}</div>
+  <div class="content-section" id="reviews">
+    <h1>Reviews</h1>
+    <div
+        class="carousel-container"
+        on:touchstart={handleTouchStart}
+        on:touchmove={handleTouchMove}
+        on:touchend={handleTouchEnd}
+    >
+        <div class="carousel">
+            {#each reviews as review, index (index)}
+                <div
+                    class="card"
+                    style="
+                        transform: translateX({(index - currentIndex) * 100}%) scale({currentIndex === index ? 1 : 0.8});
+                        opacity: {index === currentIndex ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0.5 : 0};
+                        z-index: {(currentIndex === index) ? 1 : (index === currentIndex - 1 || index === currentIndex + 1) ? 0 : -1};
+                    "
+                >
+                    <div class="quote"><FaQuoteRight /></div>
+                    <div class="review-text">{review.text}</div>
+                    <div class="reviewer-name">{review.name}</div>
+                    <div
+                        class="review-source"
+                        style="cursor: {currentIndex === index ? 'pointer' : 'default'};"
+                        on:click={() => currentIndex === index ? window.open(`https://www.booking.com/hotel/fi/saimaan-kultaranta.html#tab-reviews`, "_blank") : null}
+                    >
+                        {review.source}
+                    </div>
+                </div>
+            {/each}
         </div>
-      {/each}
+        <div class="indicators">
+            {#each reviews as _, index}
+                <div
+                    class="indicator"
+                    class:selected={currentIndex === index}
+                    on:click={() => goToSlide(index)}
+                ></div>
+            {/each}
+        </div>
     </div>
-    <div class="indicators">
-        {#each reviews as _, index}
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div
-            class="indicator"
-            class:selected={currentIndex === index}
-            on:click={() => goToSlide(index)}
-          ></div>
-        {/each}
-      </div>
-    <button class="nav-button next" on:click={nextSlide}>❯</button>
-  </div>
 </div>
   
   <style lang="scss">
@@ -150,6 +174,7 @@
   
     .review-source {
       color: gray;
+      text-decoration: underline;
     }
   
     .nav-button {
@@ -191,6 +216,56 @@
   
     .indicator.selected {
       background: #687058;
+    }
+
+    @media (max-width: 768px) {
+
+      .content-section {
+        margin: 0 0 80px 0;
+        h1 {
+          margin: 0;
+        }
+      }
+      .carousel-container {
+        height: 375px;
+      }
+
+      .card {
+        height: 325px;
+        width: 300px;
+        padding: 1rem 2rem;
+      }
+
+      .quote {
+        width: 15px;
+        height: 15px;
+      }
+
+      .nav-button {
+        display: none;
+      }
+
+      .nav-button.prev {
+        left: 10px;
+      }
+
+      .nav-button.next {
+        right: 10px;
+      }
+
+      .indicators {
+        margin-top: 10px;
+        gap: 5px;
+      }
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+      }
+
+      .carousel-container {
+        touch-action: pan-x; /* Allow horizontal swiping */
+      }
     }
   </style>
   
