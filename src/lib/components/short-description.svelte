@@ -41,4 +41,40 @@ p {
     line-height: 50px;
 }
 
+@media (max-width: 768px) {
+    .desc-wrapper {
+        margin: 60px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .separator-upper, .separator-lower {
+        height: 2px;
+        width: 130px;
+        background-color: #737373;
+        border-radius: 15px;
+    }
+
+    .separator-upper {
+        margin: 0 0 20px 0;
+    }
+
+    .separator-lower {
+        margin: 20px 0 0 0;
+    }
+
+    p {
+        text-align: center;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 165%;
+    }
+}
+
 </style>
