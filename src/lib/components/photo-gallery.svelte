@@ -1,13 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    export let padding_value = "0";
     export let images: any = [];
 
     let currentIndex = -1; // Index of the currently viewed image
     let isMobile = false; // Tracks whether the view is on mobile
-    let touchStartX = 0; // Starting X position of a touch
-    let touchEndX = 0; // Ending X position of a touch
-    let animationClass = ''; // Class for swipe animation
 
     function updateIsMobile() {
         if (typeof window !== "undefined") {
@@ -188,7 +184,6 @@
     @media (max-width: 768px) {
       .image-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px;
         gap: 12px;
       }
 

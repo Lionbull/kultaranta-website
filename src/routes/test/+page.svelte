@@ -26,7 +26,9 @@
 <WelcomeScreen />
 <ShortDescription />
 <CottagesShort />
-<PhotoGallery images={imagesPhotoGallery} padding_value={"0 120px"}/>
+<div class="photo-gallery-container">
+	<PhotoGallery images={imagesPhotoGallery}/>
+</div>
 <FeaturesSection />
 <ReviewCards />
 <Contacts />
@@ -34,6 +36,11 @@
 
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+	.photo-gallery-container {
+		padding: 0 120px;
+	}
+
 	:global(body) {
 		margin: 0;
 		padding: 0;
@@ -75,6 +82,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.photo-gallery-container {
+			padding: 0 20px;
+		}
+
 		:global(body) {
 			margin: 0;
 			padding: 0;
