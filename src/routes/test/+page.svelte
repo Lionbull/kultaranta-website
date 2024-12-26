@@ -44,6 +44,7 @@
 	:global(h1) {
 		font-family: "Oswald", serif;
 		font-size: 64px;
+		color: #1d1d1d;
 	}
 
 	:global(h2) {

@@ -42,8 +42,12 @@
                 </div>
             </div>
         </div>
+        <div class="separator" />
         <div class="small-cottage">
             <div class="text-content left">
+                <div class="image mobile">
+                    <img class="small" src="{base}/small-cottage-overview.webp" alt="Small Cottage">
+                </div>
                 <h2>Standard Villa</h2>
                 <p>Charming and intimate, our Small Cottages offer a private sauna, a fireplace, and a cozy terrace with BBQ, ideal for couples or smaller groups looking for a peaceful retreat.</p>
                 <div class="cottage-info">
@@ -72,7 +76,7 @@
                     </button>
                 </div>
             </div>
-            <div class="image">
+            <div class="image desktop">
                 <img class="small" src="{base}/small-cottage-overview.webp" alt="Small Cottage">
             </div>
         </div>
@@ -112,6 +116,10 @@
             flex-direction: row;
             align-items: center;
             gap: 20px;
+        }
+
+        .separator {
+            display: none;
         }
 
         .small-cottage {
@@ -206,6 +214,98 @@
 
             .small {
                 object-position: 100% 100%;
+            }
+
+            &.desktop {
+                display: block;
+            }
+
+            &.mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 0 20px;
+        margin: 0 0 60px 0;
+
+        h1 {
+            margin: 0 0 30px 0;
+        }
+
+        p {
+            margin: 0 20px;
+        }
+
+        .cottage-container {
+            gap: 30px;
+
+            .big-cottage {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .separator {
+                display: block;
+                width: 160px;
+                height: 2px;
+                background-color: #737373;
+                border-radius: 30px;
+                margin: 30px 0;
+            }
+
+            .small-cottage {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .text-content {
+                width: 100%;
+                gap: 20px;
+
+                .cottage-info {
+                    .info-item {
+                        gap: 10px;
+                    }
+                }
+
+                .button-wrapper {
+                    justify-content: center;
+
+                    .button-read-more {
+                        width: 202px;
+                        height: 57px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .text-content.right {
+                padding-left: 0;
+            }
+
+            .text-content.left {
+                padding-right: 0;
+            }
+
+            .image {
+                width: 100%;
+                height: 229px;
+
+                img {
+                    border-radius: 25px;
+                }
+
+                &.desktop {
+                    display: none;
+                }
+
+                &.mobile {
+                    display: block;
+                }
             }
         }
     }

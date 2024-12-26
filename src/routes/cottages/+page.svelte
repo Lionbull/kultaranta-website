@@ -1,9 +1,5 @@
 <script lang="ts">
 	import Header from "../../lib/components/header.svelte";
-	import PhotoGallery from "../../lib/components/photo-gallery.svelte";
-  	import FeaturesSection from "../../lib/components/features-section.svelte";
-	import ReviewCards from "../../lib/components/review-cards.svelte";
-    import Contacts from "$lib/components/contacts.svelte";
     import Footer from "$lib/components/footer.svelte";
   	import CottagesLong from "../../lib/components/cottages-long.svelte";
 </script>
@@ -23,6 +19,7 @@
 	:global(h1) {
 		font-family: "Oswald", serif;
 		font-size: 64px;
+		color: #1d1d1d;
 	}
 
 	:global(h2) {
