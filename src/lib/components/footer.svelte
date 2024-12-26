@@ -18,9 +18,9 @@
 	</div>
 
     <div class="contacts">
-        <p>+358456043575</p>
-		<p>Kultarannantie 35, 52200 Puumala</p>
-		<p>saimaan.kultaranta@yahoo.com</p>
+        <p>Kultarannantie 35, 52200 Puumala</p>
+        <a href="tel:+358456043575">+358 45 604 3575</a>
+		<a href="mailto:saimaan.kultaranta@yahoo.com">saimaan.kultaranta@yahoo.com</a>
 	</div>
 
     <div class="button-wrapper">
@@ -138,10 +138,19 @@
     .contacts {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        width: auto;
         color: white;
         gap: 20px;
-        p {
+
+        p, a {
             margin: 0;
+            width: auto;
+        }
+
+        a {
+            color: white;
+            text-decoration: underline;
         }
     }
 </style>

@@ -29,8 +29,8 @@ onMount(() => {
 </script>
 
 <div class="contact-wrapper" id="contacts">
-    <h1 class="mobile">Contacts</h1>
-    <div class="text-container mobile">
+    <h1>Contacts</h1>
+    <div class="text-container">
         <div class="text-item">
             <div class="icon">
                 <FaMapMarkerAlt />
@@ -50,24 +50,15 @@ onMount(() => {
             <a href="mailto:saimaan.kultaranta@yahoo.com">saimaan.kultaranta@yahoo.com</a>
         </div>
     </div>
-    <div class="contact-content desktop">
-        <h2>Contacts</h2>
-        <p>Kultarannantie 35, 52200 Puumala</p>
-        <p>+358456043575</p>
-        <p>saimaan.kultaranta@yahoo.com</p>
-    </div>
     <div id="map" />
 </div>
 
 <style lang="scss">
-
     .contact-wrapper {
-        .desktop {
+        h1 {
             display: flex;
-        }
-
-        .mobile {
-            display: none;
+            justify-content: center;
+            margin: 0;
         }
     }
 
@@ -78,22 +69,38 @@ onMount(() => {
         margin-bottom: 100px;
     }
 
-    .contact-content {
-        position: absolute;
+    .text-container {
         display: flex;
-        flex-direction: column;
-        transform: translate(5%, 90%);
-        background-color: white;
-        padding: 25px 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-    }
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 120px;
+        gap: 60px;
+        margin: 60px 0 40px 0;
 
-    h2 {
-        font-weight: 700;
-        margin: 0;
-        margin-bottom: 30px;
+        .text-item {
+            display: flex;
+            width: auto;
+            align-items: center;
+            gap: 10px;
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        p, a {
+            margin: 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: underline;
+        }
     }
 
     p, a {
@@ -102,29 +109,13 @@ onMount(() => {
     }
 
     @media (max-width: 768px) {
-        .contact-wrapper {
-
-            .desktop {
-                display: none;
-            }
-
-            .mobile {
-                display: flex;
-            }
-
-            h1 {
-                display: flex;
-                justify-content: center;
-            }
-        }
-
         .text-container {
             display: flex;
             flex-direction: column;
-            align-items: left;
+            align-items: start;
             padding: 0 20px;
             gap: 20px;
-            margin-bottom: 24px;
+            margin: 20px 0 30px 0;
 
             .text-item {
                 display: flex;
@@ -144,11 +135,6 @@ onMount(() => {
                 margin: 0;
                 font-size: 15px;
             }
-
-            a {
-                color: black;
-                text-decoration: underline;
-            }
         }
 
 
@@ -156,10 +142,6 @@ onMount(() => {
             width: 100vw;
             height: 50vh;
             margin-bottom: 60px;
-        }
-
-        .contact-content {
-            transform: translate(5%, 80%);
         }
     }
     
