@@ -61,7 +61,7 @@
 		font-family: "Montserrat", serif;
 	}
 
-	:global(p, li, div) {
+	:global(p, a, li, div) {
 		font-family: "Montserrat", serif;
 		font-weight: 400;
 		font-size: 18px;

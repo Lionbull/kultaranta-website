@@ -1,6 +1,10 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
+import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte'
+import FaPhone from 'svelte-icons/fa/FaPhone.svelte'
+import FaMapMarkerAlt from 'svelte-icons/fa/FaMapMarkerAlt.svelte'
+
 
 function initMap() {
     let dumbo = {lat: 61.522782, lng:28.27441};
@@ -25,7 +29,28 @@ onMount(() => {
 </script>
 
 <div class="contact-wrapper" id="contacts">
-    <div class="contact-content">
+    <h1 class="mobile">Contacts</h1>
+    <div class="text-container mobile">
+        <div class="text-item">
+            <div class="icon">
+                <FaMapMarkerAlt />
+            </div>
+            <p>Kultarannantie 35, 52200 Puumala</p>
+        </div>
+        <div class="text-item">
+            <div class="icon">
+                <FaPhone />
+            </div>
+            <a href="tel:+358456043575">+358 45 604 3575</a>
+        </div>
+        <div class="text-item">
+            <div class="icon">
+                <FaEnvelope />
+            </div>
+            <a href="mailto:saimaan.kultaranta@yahoo.com">saimaan.kultaranta@yahoo.com</a>
+        </div>
+    </div>
+    <div class="contact-content desktop">
         <h2>Contacts</h2>
         <p>Kultarannantie 35, 52200 Puumala</p>
         <p>+358456043575</p>
@@ -34,9 +59,20 @@ onMount(() => {
     <div id="map" />
 </div>
 
-<style>
+<style lang="scss">
+
+    .contact-wrapper {
+        .desktop {
+            display: flex;
+        }
+
+        .mobile {
+            display: none;
+        }
+    }
+
     #map {
-        width: 100vw;
+        width: 100svw;
         height: 75vh;
         background-color: grey;
         margin-bottom: 100px;
@@ -44,6 +80,8 @@ onMount(() => {
 
     .contact-content {
         position: absolute;
+        display: flex;
+        flex-direction: column;
         transform: translate(5%, 90%);
         background-color: white;
         padding: 25px 30px;
@@ -58,9 +96,71 @@ onMount(() => {
         margin-bottom: 30px;
     }
 
-    p {
+    p, a {
         margin: 0;
         margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .contact-wrapper {
+
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: flex;
+            }
+
+            h1 {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 0 20px;
+            gap: 20px;
+            margin-bottom: 24px;
+
+            .text-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .icon {
+                    width: 19px;
+                    height: 19px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            p, a {
+                margin: 0;
+                font-size: 15px;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+
+
+        #map {
+            width: 100vw;
+            height: 50vh;
+            margin-bottom: 60px;
+        }
+
+        .contact-content {
+            transform: translate(5%, 80%);
+        }
     }
     
 </style>
