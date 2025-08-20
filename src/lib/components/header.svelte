@@ -31,10 +31,11 @@
 	</div>
 
 	<div class="menu">
+		<!-- TODO: Remove test from the url as soon as the website is ready -->
 		<div on:click={() => goto(`${base}/cottages`)}>Cottages</div>
-		<div on:click={() => goto(`${base}/#features`)}>Features</div>
-		<div on:click={() => goto(`${base}/#reviews`)}>Reviews</div>
-		<div on:click={() => goto(`${base}/#contacts`)}>Contacts</div>
+		<div on:click={() => goto(`${base}/test#features`)}>Features</div>
+		<div on:click={() => goto(`${base}/test#reviews`)}>Reviews</div>
+		<div on:click={() => goto(`${base}/test#contacts`)}>Contacts</div>
 	</div>
 
 	<div class="button-wrapper">
@@ -71,20 +72,21 @@
 		  		<span>Cottages</span>
 		  	</a>
 		  </li>
+		  <!-- TODO: Remove test from the url as soon as the website is ready -->
 		  <li>
-		  	<a href="{base}/#features" on:click={closeMobileMenu}>
+		  	<a href="{base}/test#features" on:click={closeMobileMenu}>
 		  		<div class="menu-icon"><FaStar /></div>
 		  		<span>Features</span>
 		  	</a>
 		  </li>
 		  <li>
-		  	<a href="{base}/#reviews" on:click={closeMobileMenu}>
+		  	<a href="{base}/test#reviews" on:click={closeMobileMenu}>
 		  		<div class="menu-icon"><FaQuoteRight /></div>
 		  		<span>Reviews</span>
 		  	</a>
 		  </li>
 		  <li>
-		  	<a href="{base}/#contacts" on:click={closeMobileMenu}>
+		  	<a href="{base}/test#contacts" on:click={closeMobileMenu}>
 		  		<div class="menu-icon"><FaPhone /></div>
 		  		<span>Contacts</span>
 		  	</a>
