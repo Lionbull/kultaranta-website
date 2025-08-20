@@ -1,8 +1,24 @@
 <script lang="ts">
 	import FaRegCalendarAlt from 'svelte-icons/fa/FaRegCalendarAlt.svelte'
 	import IoIosMenu from 'svelte-icons/io/IoIosMenu.svelte'
+	import FaHome from 'svelte-icons/fa/FaHome.svelte'
+	import FaStar from 'svelte-icons/fa/FaStar.svelte'
+	import FaQuoteRight from 'svelte-icons/fa/FaQuoteRight.svelte'
+	import FaPhone from 'svelte-icons/fa/FaPhone.svelte'
+	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte'
+	import FaMapMarkerAlt from 'svelte-icons/fa/FaMapMarkerAlt.svelte'
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
+	
+	let isMobileMenuOpen = false;
+	
+	function toggleMobileMenu() {
+		isMobileMenuOpen = !isMobileMenuOpen;
+	}
+	
+	function closeMobileMenu() {
+		isMobileMenuOpen = false;
+	}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -35,21 +51,63 @@
 	<!-- Mobile menu -->
 
 	<div class="menu-button-wrapper">
-		<button class="hamburger" on:click={() => document.getElementById('mobile-menu')?.classList.remove('hidden')}>
+		<button class="hamburger" on:click={toggleMobileMenu}>
 			<div class="button-icon">
 				<IoIosMenu />
 			</div>
 		</button>
 	</div>
 
-	<nav id="mobile-menu" class="menu-mobile hidden">
-		<button id="close-menu" class="close-btn" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>✕</button>
-		<ul>
-		  <li><a href="{base}/cottages">Cottages</a></li>
-		  <li><a href="{base}/test#features" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Features</a></li>
-		  <li><a href="{base}/test#reviews" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Reviews</a></li>
-		  <li><a href="{base}/test#contacts" on:click={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Contacts</a></li>
+	{#if isMobileMenuOpen}
+		<div class="mobile-menu-overlay" on:click={closeMobileMenu}></div>
+	{/if}
+
+	<nav class="menu-mobile" class:open={isMobileMenuOpen}>
+		<button class="close-btn" on:click={closeMobileMenu}>✕</button>
+		<ul class="menu-list">
+		  <li>
+		  	<a href="{base}/cottages" on:click={closeMobileMenu}>
+		  		<div class="menu-icon"><FaHome /></div>
+		  		<span>Cottages</span>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="{base}/#features" on:click={closeMobileMenu}>
+		  		<div class="menu-icon"><FaStar /></div>
+		  		<span>Features</span>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="{base}/#reviews" on:click={closeMobileMenu}>
+		  		<div class="menu-icon"><FaQuoteRight /></div>
+		  		<span>Reviews</span>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="{base}/#contacts" on:click={closeMobileMenu}>
+		  		<div class="menu-icon"><FaPhone /></div>
+		  		<span>Contacts</span>
+		  	</a>
+		  </li>
 		</ul>
+		
+		<div class="contact-section">
+			<div class="contact-header">Contact Us</div>
+			<div class="contact-items">
+				<div class="contact-item">
+					<div class="contact-icon"><FaMapMarkerAlt /></div>
+					<span>Kultarannantie 35, 52200 Puumala</span>
+				</div>
+				<div class="contact-item">
+					<div class="contact-icon"><FaPhone /></div>
+					<a href="tel:+358456043575">+358 45 604 3575</a>
+				</div>
+				<div class="contact-item">
+					<div class="contact-icon"><FaEnvelope /></div>
+					<a href="mailto:saimaan.kultaranta@yahoo.com">saimaan.kultaranta@yahoo.com</a>
+				</div>
+			</div>
+		</div>
 	</nav>
 </header>
 
@@ -132,6 +190,10 @@
 		display: none;
 	}
 
+	.mobile-menu-overlay {
+		display: none;
+	}
+
 	.menu-mobile {
 		display: none;
 	}
@@ -182,6 +244,11 @@
 				background: none;
 				border: none;
 				cursor: pointer;
+				transition: all 0.2s ease;
+
+				&:hover {
+					opacity: 0.8;
+				}
 
 				.button-icon {
 					width: 46px;
@@ -192,55 +259,165 @@
 			}
 		}
 
-		.menu-mobile {
+		.mobile-menu-overlay {
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 375px;
-			background-color: #687058;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: block;
+			z-index: 998;
+		}
+
+		.menu-mobile {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 280px;
+			height: 100vh;
+			background: linear-gradient(135deg, #687058 0%, #5a6349 100%);
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			padding: 20px;
+			padding: 0;
 			box-sizing: border-box;
-			transition: transform 0.3s ease;
+			transform: translateX(100%);
+			transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			z-index: 999;
+			box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
 
-			&.hidden {
-				transform: translateY(-200%);
+			&.open {
+				transform: translateX(0);
 			}
 
 			.close-btn {
 				align-self: flex-end;
-				width: 46px;
-				height: 46px;
+				width: 50px;
+				height: 50px;
 				padding: 0;
-				margin: 0;
-				font-size: 2.2rem;
+				margin: 20px 20px 0 0;
+				font-size: 1.8rem;
 				color: white;
-				background: none;
+				background: rgba(255, 255, 255, 0.1);
 				border: none;
+				border-radius: 50%;
 				cursor: pointer;
+				transition: all 0.2s ease;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&:hover {
+					background: rgba(255, 255, 255, 0.2);
+					transform: scale(1.05);
+				}
 			}
 
-			ul {
+			.menu-list {
 				list-style: none;
-				padding: 0;
+				padding: 30px 0 20px 0;
 				width: 100%;
-				gap: 50px;
+				margin: 0;
+				flex: 1;
 
 				li {
+					width: 100%;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+					&:last-child {
+						border-bottom: none;
+					}
 
 					a {
-						padding: 15px 10px;
+						display: flex;
+						align-items: center;
+						padding: 20px 15px;
 						color: white;
 						text-decoration: none;
-						font-size: 1.5rem;
+						font-size: 1.2rem;
+						font-weight: 500;
+						transition: all 0.2s ease;
+						border-left: 4px solid transparent;
+						gap: 15px;
+
+						&:hover {
+							background: rgba(255, 255, 255, 0.1);
+							border-left-color: #EEE8D6;
+							padding-left: 35px;
+						}
+
+						.menu-icon {
+							width: 20px;
+							height: 20px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							flex-shrink: 0;
+						}
+
+						span {
+							flex: 1;
+						}
 					}
 				}
+			}
 
-				li:not(:last-child) { 
-					margin-bottom: 35px;
+			.contact-section {
+				padding: 20px 10px 30px 20px;
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				background: rgba(0, 0, 0, 0.1);
+				width: 100%;
+				box-sizing: border-box;
+
+				.contact-header {
+					color: white;
+					font-size: 1.1rem;
+					font-weight: 600;
+					margin-bottom: 15px;
+					text-align: left;
+				}
+
+				.contact-items {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+
+					.contact-item {
+						display: flex;
+						align-items: flex-start;
+						gap: 10px;
+						font-size: 0.9rem;
+						width: 100%;
+						min-width: 0; // Allows flex items to shrink below their content size
+
+						.contact-icon {
+							width: 16px;
+							height: 16px;
+							color: #EEE8D6;
+							flex-shrink: 0;
+							margin-top: 1px; // Align with first line of text
+						}
+
+						span, a {
+							color: rgba(255, 255, 255, 0.9);
+							text-decoration: none;
+							font-size: 0.8rem;
+							line-height: 1.4;
+							word-wrap: break-word;
+							word-break: break-word;
+							overflow-wrap: break-word;
+							flex: 1;
+							min-width: 0;
+						}
+
+						a {
+							&:hover {
+								color: #EEE8D6;
+								text-decoration: underline;
+							}
+						}
+					}
 				}
 			}
 		}

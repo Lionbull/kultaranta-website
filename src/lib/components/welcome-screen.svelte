@@ -60,7 +60,7 @@
     width: 35%;
     margin-left: 120px;
     gap: 22px;
-    border-radius: 50px;
+    border-radius: 30px;
     padding: 40px 48px;
 
     .title {
@@ -127,7 +127,7 @@
         width: 100%;
         margin: 0 20px;
         gap: 22px;
-        border-radius: 50px;
+        border-radius: 30px;
         padding: 24px 22px;
 
         .title {
